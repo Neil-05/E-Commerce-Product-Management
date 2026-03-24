@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CatalogService/CatalogService.csproj" />
+  <Project Path="IdentityService/IdentityService.csproj" />
+</Solution>
