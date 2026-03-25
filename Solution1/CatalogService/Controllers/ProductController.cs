@@ -29,18 +29,47 @@ namespace CatalogService.Controllers
             return Ok(await _service.GetById(id));
         }
 
-        [Authorize(Roles = "ProductManager,Admin")]
+        [Authorize(Roles = "ProductManager,Admin,Content-Executive")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateProductDto dto)
         {
             return Ok(await _service.Create(dto));
         }
 
-        [Authorize(Roles = "ProductManager,Admin")]
+        [Authorize(Roles = "ProductManager,Admin,Content-Executive")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, UpdateProductDto dto)
         {
             return Ok(await _service.Update(id, dto));
         }
+
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPaged([FromQuery] int page = 1, [FromQuery] int size = 10)
+        {
+            return Ok(await _service.GetPaged(page, size));
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("audit/paged")]
+        public async Task<IActionResult> GetAuditPaged([FromQuery] int page = 1, [FromQuery] int size = 10)
+        {
+            var data = await _service.GetAuditPaged(page, size);
+            return Ok(data);
+        }
+
+        [HttpGet("plp")]
+        public async Task<IActionResult> GetPLP(
+    [FromQuery] string? search,
+    [FromQuery] string? status,
+    [FromQuery] int page = 1,
+    [FromQuery] int size = 10,
+    [FromQuery] string? sort = null)
+        {
+            var data = await _service.GetPLP(search, status, page, size, sort);
+            return Ok(data);
+        }
+
+
+
     }
 }

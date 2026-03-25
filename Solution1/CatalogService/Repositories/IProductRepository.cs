@@ -9,4 +9,10 @@ public interface IProductRepository
     Task<Product?> GetBySKUAsync(string sku);
     Task AddAsync(Product product);
     Task UpdateAsync(Product product);
+
+    Task<List<Product>> GetPagedAsync(int page, int size);
+
+    Task<List<AuditLog>> GetAuditPagedAsync(int page, int size);
+
+    Task<List<Product>> GetPLPAsync(string? search, string? status, int page, int size, string? sort);
 }
