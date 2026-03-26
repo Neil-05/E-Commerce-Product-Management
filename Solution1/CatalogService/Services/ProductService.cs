@@ -14,10 +14,10 @@ namespace CatalogService.Services
         private readonly IHttpContextAccessor _httpContext;
 
         public ProductService(
-    IProductRepository repo,
-    AppDbContext context,
-    ILogger<ProductService> logger,
-    IHttpContextAccessor httpContext)
+            IProductRepository repo,
+            AppDbContext context,
+            ILogger<ProductService> logger,
+            IHttpContextAccessor httpContext)
         {
             _repo = repo;
             _context = context;
@@ -25,6 +25,7 @@ namespace CatalogService.Services
             _httpContext = httpContext;
         }
 
+        // ✅ GET ALL
         public async Task<List<ProductResponseDto>> GetAll()
         {
             var products = await _repo.GetAllAsync();
@@ -34,10 +35,12 @@ namespace CatalogService.Services
                 Id = p.Id,
                 Name = p.Name,
                 SKU = p.SKU,
-                Status = p.Status
+                Status = p.Status,
+                CreatedBy = p.CreatedBy
             }).ToList();
         }
 
+        // ✅ GET BY ID
         public async Task<ProductResponseDto> GetById(Guid id)
         {
             var p = await _repo.GetByIdAsync(id);
@@ -50,46 +53,50 @@ namespace CatalogService.Services
                 Id = p.Id,
                 Name = p.Name,
                 SKU = p.SKU,
-                Status = p.Status
+                Status = p.Status,
+                CreatedBy = p.CreatedBy
             };
         }
 
-        // 🔥 CREATE
+        // 🔥 CREATE (FIXED)
         public async Task<string> Create(CreateProductDto dto)
         {
-            // ✅ SKU validation
+            
             var existing = await _repo.GetBySKUAsync(dto.SKU);
             if (existing != null)
                 throw new Exception("SKU already exists");
 
-            // ✅ CATEGORY VALIDATION (IMPORTANT)
             var category = await _context.Categories.FindAsync(dto.CategoryId);
             if (category == null)
                 throw new Exception("Invalid CategoryId");
+
+            // 🔥 FIX: get email from JWT
+            var user = _httpContext.HttpContext?.User?
+    .FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+    ?? "Unknown";
 
             var product = new Product
             {
                 Name = dto.Name,
                 SKU = dto.SKU,
                 CategoryId = dto.CategoryId,
-                Description = dto.Description
+                Description = dto.Description,
+                CreatedBy = user
             };
 
             await _repo.AddAsync(product);
 
             // ✅ AUDIT LOG
-            var user = _httpContext.HttpContext?.User?.Identity?.Name ?? "Unknown";
-
             var formatted =
-    "Product:\n" +
-    $"Name: {product.Name}\n" +
-    $"SKU: {product.SKU}\n" +
-    $"CategoryId: {product.CategoryId}\n" +
-    $"Description: {product.Description}\n" +
-    $"Status: {product.Status}\n\n" +
-    $"Created By: {user}\n" +
-    $"Date: {DateTime.UtcNow:yyyy-MM-dd}\n" +
-    $"Time: {DateTime.UtcNow:HH:mm:ss}";
+"Product:\n" +
+$"Name: {product.Name}\n" +
+$"SKU: {product.SKU}\n" +
+$"CategoryId: {product.CategoryId}\n" +
+$"Description: {product.Description}\n" +
+$"Status: {product.Status}\n\n" +
+$"Created By: {user}\n" +
+$"Date: {DateTime.UtcNow:yyyy-MM-dd}\n" +
+$"Time: {DateTime.UtcNow:HH:mm:ss}";
 
             var audit = new AuditLog
             {
@@ -123,7 +130,6 @@ namespace CatalogService.Services
 
             await _repo.UpdateAsync(product);
 
-            // ✅ AUDIT LOG
             var audit = new AuditLog
             {
                 Action = "UPDATE",
@@ -148,25 +154,21 @@ namespace CatalogService.Services
                 Id = p.Id,
                 Name = p.Name,
                 SKU = p.SKU,
-                Status = p.Status
+                Status = p.Status,
+                CreatedBy = p.CreatedBy
             }).ToList();
         }
-
 
         public async Task<List<AuditLog>> GetAuditPaged(int page, int size)
         {
             return await _repo.GetAuditPagedAsync(page, size);
         }
 
-
         public async Task<List<ProductResponseDto>> GetPLP(string? search, string? status, int page, int size, string? sort)
         {
             var role = _httpContext.HttpContext?.User?
-     .FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+                .FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
 
-            Console.WriteLine("ROLE: " + role);
-
-            // 🔒 Apply visibility rule BEFORE calling repo
             if (role == "User" || string.IsNullOrEmpty(role))
             {
                 status = "Approved";
@@ -179,8 +181,23 @@ namespace CatalogService.Services
                 Id = p.Id,
                 Name = p.Name,
                 SKU = p.SKU,
-                Status = p.Status
+                Status = p.Status,
+                CreatedBy = p.CreatedBy
             }).ToList();
+        }
+
+        public async Task<string> UpdateStatus(Guid id, string status)
+        {
+            var product = await _repo.GetByIdAsync(id);
+
+            if (product == null)
+                throw new Exception("Product not found");
+
+            product.Status = status;
+
+            await _repo.UpdateAsync(product);
+
+            return "Status Updated";
         }
     }
 }

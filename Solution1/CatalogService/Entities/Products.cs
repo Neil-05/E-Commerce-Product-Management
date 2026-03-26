@@ -28,4 +28,8 @@ public class Product
     [Required]
     [MaxLength(20)]
     public string Status { get; set; } = "Draft";
+
+    // 🔥 ADD THIS
+    [MaxLength(200)]
+    public string CreatedBy { get; set; }
 }

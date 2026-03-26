@@ -16,6 +16,7 @@ namespace CatalogService.Services
         Task<List<AuditLog>> GetAuditPaged(int page, int size);
 
         Task<List<ProductResponseDto>> GetPLP(string? search, string? status, int page, int size, string? sort);
+        Task<string> UpdateStatus(Guid id, string status);
 
     }
 }
