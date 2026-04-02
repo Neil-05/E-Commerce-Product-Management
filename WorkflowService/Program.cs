@@ -14,13 +14,15 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
     .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Warning)
 
+    .Enrich.FromLogContext()
     .WriteTo.Console(outputTemplate:
-        "[{Timestamp:HH:mm:ss} {Level:u3}] [Workflow] {Message:lj}{NewLine}{Exception}")
+"{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Workflow] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
+
 
     .WriteTo.File("Logs/log-.txt",
         rollingInterval: RollingInterval.Day,
         outputTemplate:
-        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Workflow] {Message:lj}{NewLine}{Exception}")
+        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Workflow] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
 
     .CreateLogger();
 
@@ -40,7 +42,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Services
 builder.Services.AddScoped<IWorkflowService, WorkflowManager>();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddHttpClient();
+builder.Services.AddTransient<WorkflowService.Middleware.CorrelationPropagationHandler>();
+builder.Services.AddHttpClient("catalog")
+    .AddHttpMessageHandler<WorkflowService.Middleware.CorrelationPropagationHandler>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("CatalogBaseUrl") ?? "http://localhost:5191"));
 
 // JWT Authentication
 builder.Services.AddAuthentication("Bearer")
@@ -109,6 +114,9 @@ app.UseSwaggerUI();
 // Auth Middleware
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<WorkflowService.Middleware.CorrelationIdMiddleware>();
+app.UseMiddleware<WorkflowService.Middleware.RequestLoggingMiddleware>();
 
 // Map Controllers
 app.MapControllers();

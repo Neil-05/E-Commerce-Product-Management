@@ -23,10 +23,8 @@ namespace WorkflowService.Services
         {
             _context = context;
             _httpContext = httpContext;
-            _httpClient = factory.CreateClient();
+            _httpClient = factory.CreateClient("catalog");
             _logger = logger;
-
-            _httpClient.BaseAddress = new Uri("http://localhost:5191");
         }
 
         private string GetUser()

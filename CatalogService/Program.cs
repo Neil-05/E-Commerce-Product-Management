@@ -14,15 +14,19 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("System", Serilog.Events.LogEventLevel.Warning)
     .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Warning)
 
+    .Enrich.FromLogContext()
     .WriteTo.Console(outputTemplate:
-        "[{Timestamp:HH:mm:ss} {Level:u3}] [Catalog] {Message:lj}{NewLine}{Exception}")
+"{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Catalog] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
+
 
     .WriteTo.File("Logs/log-.txt",
         rollingInterval: RollingInterval.Day,
         outputTemplate:
-        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Catalog] {Message:lj}{NewLine}{Exception}")
+        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Catalog] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
 
     .CreateLogger();
+
+  
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
@@ -59,11 +63,18 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization();
 
+// Correlation propagation for outgoing HTTP calls
+builder.Services.AddTransient<CatalogService.Middleware.CorrelationPropagationHandler>();
+builder.Services.AddHttpClient("default")
+    .AddHttpMessageHandler<CatalogService.Middleware.CorrelationPropagationHandler>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("DownstreamBaseUrl") ?? "http://localhost:5191"));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseMiddleware<CatalogService.Middleware.CorrelationIdMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<RequestLoggingMiddleware>();
 

@@ -29,24 +29,39 @@ namespace CatalogService.Services
             _httpContext = httpContext;
         }
 
+
+
         // ✅ GET ALL
         public async Task<List<ProductResponseDto>> GetAll()
         {
             _logger.LogInformation("[PRODUCT][GET][START]");
+
             try
             {
                 var products = await _repo.GetAllAsync();
 
-                var result = products.Select(p => new ProductResponseDto
+                var result = new List<ProductResponseDto>();
+
+                foreach (var p in products)
                 {
-                    Id = p.Id,
-                    Name = p.Name,
-                    SKU = p.SKU,
-                    Status = p.Status,
-                    CreatedBy = p.CreatedBy
-                }).ToList();
+                    var images = await _context.MediaAssets
+                        .Where(m => m.ProductId == p.Id)
+                        .Select(m => m.Url)
+                        .ToListAsync();
+
+                    result.Add(new ProductResponseDto
+                    {
+                        Id = p.Id,
+                        Name = p.Name,
+                        SKU = p.SKU,
+                        Status = p.Status,
+                        CreatedBy = p.CreatedBy,
+                        Images = images
+                    });
+                }
 
                 _logger.LogInformation("[PRODUCT][GET][SUCCESS] Count: {count}", result.Count);
+
                 return result;
             }
             catch (Exception ex)
@@ -59,14 +74,14 @@ namespace CatalogService.Services
         // ✅ GET BY ID
         public async Task<ProductResponseDto> GetById(Guid id)
         {
-            _logger.LogInformation("[PRODUCT][GET][START] Id: {id}", id);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][GET][START] Id: {id}", id);
             try
             {
                 var p = await _repo.GetByIdAsync(id);
 
                 if (p == null)
                 {
-                    _logger.LogWarning("[PRODUCT][GET][NOT_FOUND] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][GET][NOT_FOUND] Id: {id}", id);
                     throw new Exception("Product not found");
                 }
 
@@ -86,12 +101,12 @@ namespace CatalogService.Services
                     Images = media
                 };
 
-                _logger.LogInformation("[PRODUCT][GET][SUCCESS] Id: {id} SKU: {sku}", id, p.SKU);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][GET][SUCCESS] Id: {id} SKU: {sku}", id, p.SKU);
                 return dto;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][GET][ERROR] Id: {id}", id);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][GET][ERROR] Id: {id}", id);
                 throw;
             }
         }
@@ -99,20 +114,20 @@ namespace CatalogService.Services
         // 🔥 CREATE (FIXED)
         public async Task<string> Create(CreateProductDto dto)
         {
-            _logger.LogInformation("[PRODUCT][CREATE][START] SKU: {sku}", dto.SKU);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][CREATE][START] SKU: {sku}", dto.SKU);
             try
             {
                 var existing = await _repo.GetBySKUAsync(dto.SKU);
                 if (existing != null)
                 {
-                    _logger.LogWarning("[PRODUCT][CREATE][DUPLICATE_SKU] SKU: {sku}", dto.SKU);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][CREATE][DUPLICATE_SKU] SKU: {sku}", dto.SKU);
                     throw new Exception("SKU already exists");
                 }
 
                 var category = await _context.Categories.FindAsync(dto.CategoryId);
                 if (category == null)
                 {
-                    _logger.LogWarning("[PRODUCT][CREATE][INVALID_CATEGORY] CategoryId: {categoryId}", dto.CategoryId);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][CREATE][INVALID_CATEGORY] CategoryId: {categoryId}", dto.CategoryId);
                     throw new Exception("Invalid CategoryId");
                 }
 
@@ -156,13 +171,13 @@ namespace CatalogService.Services
                 _context.AuditLogs.Add(audit);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[PRODUCT][CREATE][SUCCESS] SKU: {sku} Id: {id}", dto.SKU, product.Id);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][CREATE][SUCCESS] SKU: {sku} Id: {id}", dto.SKU, product.Id);
 
                 return "Product Created";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][CREATE][ERROR] SKU: {sku}", dto.SKU);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][CREATE][ERROR] SKU: {sku}", dto.SKU);
                 throw;
             }
         }
@@ -170,20 +185,20 @@ namespace CatalogService.Services
         // 🔥 UPDATE
         public async Task<string> Update(Guid id, UpdateProductDto dto)
         {
-            _logger.LogInformation("[PRODUCT][UPDATE][START] Id: {id}", id);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][UPDATE][START] Id: {id}", id);
             try
             {
                 var product = await _repo.GetByIdAsync(id);
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[PRODUCT][UPDATE][NOT_FOUND] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][UPDATE][NOT_FOUND] Id: {id}", id);
                     throw new Exception("Product not found");
                 }
 
                 if (product.Status == "Approved" || product.Status == "Published")
                 {
-                    _logger.LogWarning("[PRODUCT][UPDATE][INVALID_STATUS] Id: {id} Status: {status}", id, product.Status);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][UPDATE][INVALID_STATUS] Id: {id} Status: {status}", id, product.Status);
                     throw new Exception("Cannot update approved/published product");
                 }
 
@@ -205,13 +220,13 @@ namespace CatalogService.Services
                 _context.AuditLogs.Add(audit);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[PRODUCT][UPDATE][SUCCESS] Id: {id} SKU: {sku}", id, product.SKU);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][UPDATE][SUCCESS] Id: {id} SKU: {sku}", id, product.SKU);
 
                 return "Product Updated";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][UPDATE][ERROR] Id: {id}", id);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][UPDATE][ERROR] Id: {id}", id);
                 throw;
             }
         }
@@ -219,7 +234,7 @@ namespace CatalogService.Services
         // 🔥 PAGINATION
         public async Task<List<ProductResponseDto>> GetPaged(int page, int size)
         {
-            _logger.LogInformation("[PRODUCT][PAGED][START] Page: {page} Size: {size}", page, size);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][PAGED][START] Page: {page} Size: {size}", page, size);
             try
             {
                 var products = await _repo.GetPagedAsync(page, size);
@@ -233,35 +248,35 @@ namespace CatalogService.Services
                     CreatedBy = p.CreatedBy
                 }).ToList();
 
-                _logger.LogInformation("[PRODUCT][PAGED][SUCCESS] Returned: {count}", result.Count);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][PAGED][SUCCESS] Returned: {count}", result.Count);
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][PAGED][ERROR] Page: {page} Size: {size}", page, size);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][PAGED][ERROR] Page: {page} Size: {size}", page, size);
                 throw;
             }
         }
 
         public async Task<List<AuditLog>> GetAuditPaged(int page, int size)
         {
-            _logger.LogInformation("[AUDIT][GET][START] Page: {page} Size: {size}", page, size);
+            _logger.LogInformation("[Correlation:{cid}] [AUDIT][GET][START] Page: {page} Size: {size}", page, size);
             try
             {
                 var result = await _repo.GetAuditPagedAsync(page, size);
-                _logger.LogInformation("[AUDIT][GET][SUCCESS] Returned: {count}", result.Count);
+                _logger.LogInformation("[Correlation:{cid}] [AUDIT][GET][SUCCESS] Returned: {count}", result.Count);
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[AUDIT][GET][ERROR] Page: {page} Size: {size}", page, size);
+                _logger.LogError(ex, "[Correlation:{cid}] [AUDIT][GET][ERROR] Page: {page} Size: {size}", page, size);
                 throw;
             }
         }
 
         public async Task<List<ProductResponseDto>> GetPLP(string? search, string? status, int page, int size, string? sort)
         {
-            _logger.LogInformation("[PRODUCT][PLP][START] Search: {search} Status: {status} Page: {page} Size: {size} Sort: {sort}", search, status, page, size, sort);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][PLP][START] Search: {search} Status: {status} Page: {page} Size: {size} Sort: {sort}", search, status, page, size, sort);
             try
             {
                 var role = _httpContext.HttpContext?.User?
@@ -283,26 +298,26 @@ namespace CatalogService.Services
                     CreatedBy = p.CreatedBy
                 }).ToList();
 
-                _logger.LogInformation("[PRODUCT][PLP][SUCCESS] Returned: {count}", result.Count);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][PLP][SUCCESS] Returned: {count}", result.Count);
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][PLP][ERROR] Search: {search} Status: {status}", search, status);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][PLP][ERROR] Search: {search} Status: {status}", search, status);
                 throw;
             }
         }
 
         public async Task<string> UpdateStatus(Guid id, string status)
         {
-            _logger.LogInformation("[PRODUCT][UPDATE][STATUS][START] Id: {id} Status: {status}", id, status);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][UPDATE][STATUS][START] Id: {id} Status: {status}", id, status);
             try
             {
                 var product = await _repo.GetByIdAsync(id);
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[PRODUCT][UPDATE][STATUS][NOT_FOUND] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][UPDATE][STATUS][NOT_FOUND] Id: {id}", id);
                     throw new Exception("Product not found");
                 }
 
@@ -310,25 +325,25 @@ namespace CatalogService.Services
 
                 await _repo.UpdateAsync(product);
 
-                _logger.LogInformation("[PRODUCT][UPDATE][STATUS][SUCCESS] Id: {id} Status: {status}", id, status);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][UPDATE][STATUS][SUCCESS] Id: {id} Status: {status}", id, status);
                 return "Status Updated";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][UPDATE][STATUS][ERROR] Id: {id} Status: {status}", id, status);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][UPDATE][STATUS][ERROR] Id: {id} Status: {status}", id, status);
                 throw;
             }
         }
         public async Task DeleteProduct(Guid id)
         {
-            _logger.LogInformation("[PRODUCT][DELETE][START] Id: {id}", id);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][DELETE][START] Id: {id}", id);
             try
             {
                 var product = await _context.Products.FindAsync(id);
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[PRODUCT][DELETE][NOT_FOUND] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][DELETE][NOT_FOUND] Id: {id}", id);
                     throw new Exception("Product not found");
                 }
 
@@ -341,14 +356,14 @@ namespace CatalogService.Services
                 // 🔥 MAIN LOGIC
                 if (product.CreatedBy != userEmail && userRole != "Admin")
                 {
-                    _logger.LogWarning("[PRODUCT][DELETE][UNAUTHORIZED] Id: {id} User: {user}", id, userEmail);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][DELETE][UNAUTHORIZED] Id: {id} User: {user}", id, userEmail);
                     throw new Exception("You are not allowed to delete this product");
                 }
 
                 // Optional rule
                 if (product.Status == "Published")
                 {
-                    _logger.LogWarning("[PRODUCT][DELETE][INVALID_STATUS] Id: {id} Status: {status}", id, product.Status);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][DELETE][INVALID_STATUS] Id: {id} Status: {status}", id, product.Status);
                     throw new Exception("Cannot delete published product");
                 }
 
@@ -356,17 +371,17 @@ namespace CatalogService.Services
 
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[PRODUCT][DELETE][SUCCESS] Id: {id}", id);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][DELETE][SUCCESS] Id: {id}", id);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][DELETE][ERROR] Id: {id}", id);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][DELETE][ERROR] Id: {id}", id);
                 throw;
             }
         }
         public async Task<List<ProductResponseDto>> GetDeletedProducts()
         {
-            _logger.LogInformation("[PRODUCT][GET_DELETED][START]");
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][GET_DELETED][START]");
             try
             {
                 var products = await _context.Products
@@ -382,32 +397,32 @@ namespace CatalogService.Services
                     CreatedBy = p.CreatedBy
                 }).ToList();
 
-                _logger.LogInformation("[PRODUCT][GET_DELETED][SUCCESS] Count: {count}", result.Count);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][GET_DELETED][SUCCESS] Count: {count}", result.Count);
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][GET_DELETED][ERROR]");
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][GET_DELETED][ERROR]");
                 throw;
             }
         }
 
         public async Task<string> RestoreProduct(Guid id)
         {
-            _logger.LogInformation("[PRODUCT][RESTORE][START] Id: {id}", id);
+            _logger.LogInformation("[Correlation:{cid}] [PRODUCT][RESTORE][START] Id: {id}", id);
             try
             {
                 var product = await _context.Products.FindAsync(id);
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[PRODUCT][RESTORE][NOT_FOUND] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][RESTORE][NOT_FOUND] Id: {id}", id);
                     throw new Exception("Product not found");
                 }
 
                 if (!product.IsDeleted)
                 {
-                    _logger.LogWarning("[PRODUCT][RESTORE][NOT_DELETED] Id: {id}", id);
+                    _logger.LogWarning("[Correlation:{cid}] [PRODUCT][RESTORE][NOT_DELETED] Id: {id}", id);
                     throw new Exception("Product is not deleted");
                 }
 
@@ -415,25 +430,25 @@ namespace CatalogService.Services
 
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[PRODUCT][RESTORE][SUCCESS] Id: {id}", id);
+                _logger.LogInformation("[Correlation:{cid}] [PRODUCT][RESTORE][SUCCESS] Id: {id}", id);
                 return "Product restored";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[PRODUCT][RESTORE][ERROR] Id: {id}", id);
+                _logger.LogError(ex, "[Correlation:{cid}] [PRODUCT][RESTORE][ERROR] Id: {id}", id);
                 throw;
             }
         }
         public async Task<string> AddMedia(Guid productId, string url)
         {
-            _logger.LogInformation("[IMAGE][ADD][START] ProductId: {productId} Url: {url}", productId, url);
+            _logger.LogInformation("[Correlation:{cid}] [IMAGE][ADD][START] ProductId: {productId} Url: {url}", productId, url);
             try
             {
                 var product = await _repo.GetByIdAsync(productId);
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[IMAGE][ADD][NOT_FOUND] ProductId: {productId}", productId);
+                    _logger.LogWarning("[Correlation:{cid}] [IMAGE][ADD][NOT_FOUND] ProductId: {productId}", productId);
                     throw new Exception("Product not found");
                 }
 
@@ -446,24 +461,24 @@ namespace CatalogService.Services
                 _context.MediaAssets.Add(media);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[IMAGE][ADD][SUCCESS] ProductId: {productId} MediaId: {mediaId}", productId, media.Id);
+                _logger.LogInformation("[Correlation:{cid}] [IMAGE][ADD][SUCCESS] ProductId: {productId} MediaId: {mediaId}", productId, media.Id);
                 return "Media added";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[IMAGE][ADD][ERROR] ProductId: {productId}", productId);
+                _logger.LogError(ex, "[Correlation:{cid}] [IMAGE][ADD][ERROR] ProductId: {productId}",  productId);
                 throw;
             }
         }
 
         public async Task<string> UploadImage(Guid productId, IFormFile file, bool isPrimary)
         {
-            _logger.LogInformation("[IMAGE][UPLOAD][START] ProductId: {productId} FileName: {fileName} IsPrimary: {isPrimary}", productId, file?.FileName, isPrimary);
+            _logger.LogInformation("[Correlation:{cid}] [IMAGE][UPLOAD][START] ProductId: {productId} FileName: {fileName} IsPrimary: {isPrimary}", productId, file?.FileName, isPrimary);
             try
             {
                 if (file == null || file.Length == 0)
                 {
-                    _logger.LogWarning("[IMAGE][UPLOAD][INVALID_FILE] ProductId: {productId}", productId);
+                    _logger.LogWarning("[Correlation:{cid}] [IMAGE][UPLOAD][INVALID_FILE] ProductId: {productId}", productId);
                     throw new Exception("Invalid file");
                 }
 
@@ -471,14 +486,14 @@ namespace CatalogService.Services
 
                 if (product == null)
                 {
-                    _logger.LogWarning("[IMAGE][UPLOAD][NOT_FOUND] ProductId: {productId}", productId);
+                    _logger.LogWarning("[Correlation:{cid}] [IMAGE][UPLOAD][NOT_FOUND] ProductId: {productId}", productId);
                     throw new Exception("Product not found");
                 }
 
                 // 🔥 WORKFLOW RULE
                 if (product.Status != "Draft" && product.Status != "Enrichment")
                 {
-                    _logger.LogWarning("[IMAGE][UPLOAD][INVALID_STAGE] ProductId: {productId} Status: {status}", productId, product.Status);
+                    _logger.LogWarning("[Correlation:{cid}] [IMAGE][UPLOAD][INVALID_STAGE] ProductId: {productId} Status: {status}", productId, product.Status);
                     throw new Exception("Cannot upload images at this stage");
                 }
 
@@ -518,7 +533,7 @@ namespace CatalogService.Services
                         m.IsPrimary = false;
                     }
 
-                    _logger.LogInformation("[IMAGE][UPLOAD][PRIMARY_REMOVED] ProductId: {productId} Removed: {count}", productId, existingPrimary.Count);
+                    _logger.LogInformation("[Correlation:{cid}] [IMAGE][UPLOAD][PRIMARY_REMOVED] ProductId: {productId} Removed: {count}", productId, existingPrimary.Count);
                 }
 
                 // 🔥 SAVE NEW IMAGE
@@ -532,26 +547,26 @@ namespace CatalogService.Services
                 _context.MediaAssets.Add(media);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[IMAGE][UPLOAD][SUCCESS] ProductId: {productId} MediaId: {mediaId} Url: {url}", productId, media.Id, url);
+                _logger.LogInformation("[Correlation:{cid}] [IMAGE][UPLOAD][SUCCESS] ProductId: {productId} MediaId: {mediaId} Url: {url}", productId, media.Id, url);
 
                 return "Image uploaded";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[IMAGE][UPLOAD][ERROR] ProductId: {productId}", productId);
+                _logger.LogError(ex, "[Correlation:{cid}] [IMAGE][UPLOAD][ERROR] ProductId: {productId}", productId);
                 throw;
             }
         }
         public async Task<string> DeleteImage(Guid mediaId)
         {
-            _logger.LogInformation("[IMAGE][DELETE][START] MediaId: {mediaId}", mediaId);
+            _logger.LogInformation("[Correlation:{cid}] [IMAGE][DELETE][START] MediaId: {mediaId}", mediaId);
             try
             {
                 var media = await _context.MediaAssets.FindAsync(mediaId);
 
                 if (media == null)
                 {
-                    _logger.LogWarning("[IMAGE][DELETE][NOT_FOUND] MediaId: {mediaId}", mediaId);
+                    _logger.LogWarning("[Correlation:{cid}] [IMAGE][DELETE][NOT_FOUND] MediaId: {mediaId}", mediaId);
                     throw new Exception("Image not found");
                 }
 
@@ -565,18 +580,18 @@ namespace CatalogService.Services
                 if (File.Exists(filePath))
                 {
                     File.Delete(filePath);
-                    _logger.LogInformation("[IMAGE][DELETE][FILE_REMOVED] MediaId: {mediaId} Path: {path}", mediaId, filePath);
+                    _logger.LogInformation("[Correlation:{cid}] [IMAGE][DELETE][FILE_REMOVED] MediaId: {mediaId} Path: {path}", mediaId, filePath);
                 }
 
                 _context.MediaAssets.Remove(media);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("[IMAGE][DELETE][SUCCESS] MediaId: {mediaId}", mediaId);
+                _logger.LogInformation("[Correlation:{cid}] [IMAGE][DELETE][SUCCESS] MediaId: {mediaId}", mediaId);
                 return "Image deleted";
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "[IMAGE][DELETE][ERROR] MediaId: {mediaId}", mediaId);
+                _logger.LogError(ex, "[Correlation:{cid}] [IMAGE][DELETE][ERROR] MediaId: {mediaId}", mediaId);
                 throw;
             }
         }

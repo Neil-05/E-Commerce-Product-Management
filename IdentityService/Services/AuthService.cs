@@ -2,6 +2,7 @@
 using IdentityService.Entities;
 using IdentityService.Repositories;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Http;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -13,13 +14,16 @@ public class AuthService : IAuthService
     private readonly IUserRepository _repo;
     private readonly IConfiguration _config;
     private readonly ILogger<AuthService> _logger;
+    private readonly IHttpContextAccessor _httpContext;
 
-    public AuthService(IUserRepository repo, IConfiguration config, ILogger<AuthService> logger)
+    public AuthService(IUserRepository repo, IConfiguration config, ILogger<AuthService> logger, IHttpContextAccessor httpContext)
     {
         _repo = repo;
         _config = config;
         _logger = logger;
+        _httpContext = httpContext;
     }
+
 
     public async Task<AuthResponseDto> Register(RegisterRequestDto dto)
     {
@@ -40,7 +44,7 @@ public class AuthService : IAuthService
 
         await _repo.AddUserAsync(user);
 
-        _logger.LogInformation("User registered: {email}", dto.Email);
+        _logger.LogInformation("User registered: {email}",  dto.Email);
 
         return new AuthResponseDto
         {

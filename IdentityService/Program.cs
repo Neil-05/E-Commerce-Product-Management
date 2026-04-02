@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Text;
-
+Directory.CreateDirectory("Logs");
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
 
@@ -17,14 +17,15 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("Microsoft.EntityFrameworkCore", Serilog.Events.LogEventLevel.Warning)
 
     // ✅ OUTPUT FORMAT
+    .Enrich.FromLogContext()
     .WriteTo.Console(outputTemplate:
-            "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Identity] {Message:lj}{NewLine}{Exception}")
+"{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Identity] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
 
 
     .WriteTo.File("Logs/log-.txt",
         rollingInterval: RollingInterval.Day,
         outputTemplate:
-        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+        "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] [Identity] [CID:{CorrelationId}] {Message:lj}{NewLine}{Exception}")
 
     .CreateLogger();
 
@@ -39,6 +40,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddTransient<IdentityService.Middleware.CorrelationPropagationHandler>();
+builder.Services.AddHttpClient("default")
+    .AddHttpMessageHandler<IdentityService.Middleware.CorrelationPropagationHandler>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("DownstreamBaseUrl") ?? "http://localhost:5191"));
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -86,7 +93,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<IdentityService.Middleware.CorrelationIdMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<IdentityService.Middleware.RequestLoggingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

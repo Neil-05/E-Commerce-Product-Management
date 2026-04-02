@@ -1,4 +1,7 @@
-﻿namespace CatalogService.Middleware
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+
+namespace WorkflowService.Middleware
 {
     public class RequestLoggingMiddleware
     {
