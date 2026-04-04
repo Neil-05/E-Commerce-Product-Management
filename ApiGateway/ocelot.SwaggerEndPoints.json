@@ -1,0 +1,34 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "identity",
+      "Config": [
+        {
+          "Name": "Identity Service",
+          "Version": "v1", 
+          "Url": "http://localhost:5085/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "catalog",
+      "Config": [
+        {
+          "Name": "Catalog Service",
+          "Version": "v1",
+          "Url": "http://localhost:5191/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "workflow",
+      "Config": [
+        {
+          "Name": "Workflow Service",
+          "Version": "v1",
+          "Url": "http://localhost:5038/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

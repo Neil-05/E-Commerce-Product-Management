@@ -29,4 +29,6 @@ public class User
 
     public string? ResetOtp { get; set; }
     public DateTime? OtpExpiry { get; set; }
+    public string? RefreshToken { get; set; }
+    public DateTime? RefreshTokenExpiry { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WorkflowService.Entitites
+namespace WorkflowService.Entities
 {
    
     public class Workflow

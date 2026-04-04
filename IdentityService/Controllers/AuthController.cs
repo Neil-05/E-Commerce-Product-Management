@@ -71,4 +71,11 @@ public class AuthController : ControllerBase
 
         return Ok("Logged out");
     }
+
+    [HttpPost("refresh")]
+    public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequestDto dto)
+    {
+        var result = await _service.RefreshToken(dto);
+        return Ok(result);
+    }
 }

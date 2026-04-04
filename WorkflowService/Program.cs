@@ -46,6 +46,7 @@ builder.Services.AddTransient<WorkflowService.Middleware.CorrelationPropagationH
 builder.Services.AddHttpClient("catalog")
     .AddHttpMessageHandler<WorkflowService.Middleware.CorrelationPropagationHandler>()
     .ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("CatalogBaseUrl") ?? "http://localhost:5191"));
+builder.Services.AddScoped<WorkflowService.Services.ISagaManager, WorkflowService.Services.SagaManager>();
 
 // JWT Authentication
 builder.Services.AddAuthentication("Bearer")

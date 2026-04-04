@@ -24,6 +24,10 @@ public class AuthService : IAuthService
         _httpContext = httpContext;
     }
 
+    private string GenerateRefreshToken()
+    {
+        return Guid.NewGuid().ToString();
+    }
 
     public async Task<AuthResponseDto> Register(RegisterRequestDto dto)
     {
@@ -44,7 +48,7 @@ public class AuthService : IAuthService
 
         await _repo.AddUserAsync(user);
 
-        _logger.LogInformation("User registered: {email}",  dto.Email);
+        _logger.LogInformation("User registered: {email}", dto.Email);
 
         return new AuthResponseDto
         {
@@ -63,12 +67,17 @@ public class AuthService : IAuthService
             _logger.LogWarning("Invalid login attempt: {email}", dto.Email);
             throw new Exception("Invalid credentials");
         }
+        var refreshToken = GenerateRefreshToken();
+        user.RefreshToken = refreshToken;
+        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+        await _repo.UpdateUserAsync(user);
 
         _logger.LogInformation("User logged in: {email}", dto.Email);
 
         return new AuthResponseDto
         {
             Token = GenerateJwt(user),
+            RefreshToken = refreshToken,
             Email = user.Email,
             Role = user.Role
         };
@@ -171,5 +180,34 @@ public class AuthService : IAuthService
     public bool IsTokenBlacklisted(string token)
     {
         return _blacklist.Contains(token);
+    }
+
+    public async Task<AuthResponseDto> RefreshToken(RefreshTokenRequestDto dto)
+    {
+        var user = await _repo.GetByEmailAsync(dto.Email);
+
+        if (user == null ||
+            user.RefreshToken != dto.RefreshToken ||
+            user.RefreshTokenExpiry < DateTime.UtcNow)
+        {
+            _logger.LogWarning("Invalid refresh token: {email}", dto.Email);
+            throw new Exception("Invalid refresh token");
+        }
+
+        var newAccessToken = GenerateJwt(user);
+        var newRefreshToken = GenerateRefreshToken();
+
+        user.RefreshToken = newRefreshToken;
+        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+
+        await _repo.UpdateUserAsync(user);
+
+        return new AuthResponseDto
+        {
+            Token = newAccessToken,
+            RefreshToken = newRefreshToken,
+            Email = user.Email,
+            Role = user.Role
+        };
     }
 }

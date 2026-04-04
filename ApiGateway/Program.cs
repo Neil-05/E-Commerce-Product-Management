@@ -1,17 +1,28 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using MMLib.SwaggerForOcelot.DependencyInjection;
+using MMLib.SwaggerForOcelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔥 Load ocelot.json
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+// load configs
+builder.Configuration
+    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
+    .AddJsonFile("ocelot.SwaggerEndPoints.json", optional: false, reloadOnChange: true);
 
-// 🔥 Add Ocelot
+// add services
 builder.Services.AddOcelot();
+builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
 var app = builder.Build();
 
-// 🔥 Use Ocelot
+// swagger UI (🔥 important)
+app.UseSwaggerForOcelotUI(opt =>
+{
+    opt.PathToSwaggerGenerator = "/swagger/docs";
+});
+
+// ocelot
 await app.UseOcelot();
 
 app.Run();

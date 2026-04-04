@@ -12,5 +12,6 @@ namespace IdentityService.Services
 
         void Logout(string token);
         bool IsTokenBlacklisted(string token);
+        Task<AuthResponseDto> RefreshToken(RefreshTokenRequestDto dto);
     }
 }

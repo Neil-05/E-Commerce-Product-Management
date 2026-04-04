@@ -8,16 +8,18 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5038
+          "Port": 5085
         }
       ],
       "UpstreamPathTemplate": "/gateway/auth/{everything}",
-      "UpstreamHttpMethod": [ "POST", "GET" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "SwaggerKey": "identity",
+      "Priority": 1
     },
 
-    // 🛒 CATALOG - PRODUCTS
+    // 🛒 CATALOG (GENERAL - KEEP LOW PRIORITY)
     {
-      "DownstreamPathTemplate": "/api/products",
+      "DownstreamPathTemplate": "/api/products/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -25,68 +27,10 @@
           "Port": 5191
         }
       ],
-      "UpstreamPathTemplate": "/gateway/products",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/products/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5191
-        }
-      ],
-      "UpstreamPathTemplate": "/gateway/products/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/products/{id}/status",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5191
-        }
-      ],
-      "UpstreamPathTemplate": "/gateway/products/{id}/status",
-      "UpstreamHttpMethod": [ "PUT" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/products/paged",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5191
-        }
-      ],
-      "UpstreamPathTemplate": "/gateway/products/paged",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/products/plp",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5191
-        }
-      ],
-      "UpstreamPathTemplate": "/gateway/products/plp",
-      "UpstreamHttpMethod": [ "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/products/audit/paged",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5191
-        }
-      ],
-      "UpstreamPathTemplate": "/gateway/products/audit/paged",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/products/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "SwaggerKey": "catalog",
+      "Priority": 0
     },
 
     // 🔄 WORKFLOW
@@ -100,12 +44,14 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/workflow/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "SwaggerKey": "workflow",
+      "Priority": 1
     },
 
-    // 📊 ADMIN / REPORTING
+    // 📊 ADMIN
     {
-      "DownstreamPathTemplate": "/api/reports/dashboard",
+      "DownstreamPathTemplate": "/api/reports/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -113,11 +59,12 @@
           "Port": 5136
         }
       ],
-      "UpstreamPathTemplate": "/gateway/reports/dashboard",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/reports/{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 1
     },
     {
-      "DownstreamPathTemplate": "/api/audit/products/{id}",
+      "DownstreamPathTemplate": "/api/audit/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -125,8 +72,9 @@
           "Port": 5136
         }
       ],
-      "UpstreamPathTemplate": "/gateway/audit/products/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/audit/{everything}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "Priority": 1
     }
 
   ],

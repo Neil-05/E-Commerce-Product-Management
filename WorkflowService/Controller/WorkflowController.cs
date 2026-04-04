@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WorkflowService.Data;
 using WorkflowService.Dtos;
-using WorkflowService.Entitites;
+using WorkflowService.Entities;
 using WorkflowService.Services;
 namespace WorkflowService.Controller
 {

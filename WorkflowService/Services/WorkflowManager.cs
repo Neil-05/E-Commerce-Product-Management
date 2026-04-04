@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Json;
 using WorkflowService.Data;
 using WorkflowService.Dtos;
-using WorkflowService.Entitites;
+using WorkflowService.Entities;
 using WorkflowService.Messaging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -14,17 +14,20 @@ namespace WorkflowService.Services
         private readonly IHttpContextAccessor _httpContext;
         private readonly HttpClient _httpClient;
         private readonly ILogger<WorkflowManager> _logger;
+        private readonly WorkflowService.Services.ISagaManager _sagaManager;
 
         public WorkflowManager(
             AppDbContext context,
             IHttpContextAccessor httpContext,
             IHttpClientFactory factory,
-            ILogger<WorkflowManager> logger)
+            ILogger<WorkflowManager> logger,
+            WorkflowService.Services.ISagaManager sagaManager)
         {
             _context = context;
             _httpContext = httpContext;
             _httpClient = factory.CreateClient("catalog");
             _logger = logger;
+            _sagaManager = sagaManager;
         }
 
         private string GetUser()
@@ -175,8 +178,10 @@ namespace WorkflowService.Services
         public async Task<string> Publish(Guid productId)
         {
             _logger.LogInformation("[Workflow][WORKFLOW][PUBLISH][START] ProductId: {productId} User: {user} ⇢", productId, GetUser());
+            Guid sagaId = Guid.Empty;
             try
             {
+                sagaId = await _sagaManager.StartSaga(productId);
                 var currentStatus = await GetCurrentStatus(productId);
 
                 if (currentStatus != "Approved")
@@ -211,11 +216,23 @@ namespace WorkflowService.Services
                     Timestamp = DateTime.UtcNow
                 });
 
+                await _sagaManager.CompleteSaga(sagaId);
+
                 _logger.LogInformation("[Workflow][WORKFLOW][PUBLISH][SUCCESS] ProductId: {productId} → Published ✓ ⇢", productId);
                 return "Product Published";
             }
             catch (Exception ex)
             {
+                try
+                {
+                    if (sagaId != Guid.Empty)
+                        await _sagaManager.CancelSaga(sagaId);
+                }
+                catch (Exception se)
+                {
+                    _logger.LogWarning(se, "[SAGA][CANCEL][ERROR] SagaId: {sagaId}", sagaId);
+                }
+
                 _logger.LogError(ex, "[Workflow][WORKFLOW][PUBLISH][ERROR] ProductId: {productId} ✖ ⇢", productId);
                 throw;
             }
