@@ -61,7 +61,8 @@
       ],
       "UpstreamPathTemplate": "/gateway/reports/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
-      "Priority": 1
+      "SwaggerKey": "admin",
+      "Priority": 2
     },
     {
       "DownstreamPathTemplate": "/api/audit/{everything}",
@@ -74,7 +75,8 @@
       ],
       "UpstreamPathTemplate": "/gateway/audit/{everything}",
       "UpstreamHttpMethod": [ "GET" ],
-      "Priority": 1
+      "SwaggerKey": "admin",
+      "Priority": 2
     }
 
   ],

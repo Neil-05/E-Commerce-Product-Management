@@ -29,6 +29,16 @@
           "Url": "http://localhost:5038/swagger/v1/swagger.json"
         }
       ]
+    },
+    {
+      "Key": "admin",
+      "Config": [
+        {
+          "Name": "Admin Service",
+          "Version": "v1",
+          "Url": "http://localhost:5136/swagger/v1/swagger.json"
+        }
+      ]
     }
   ]
 }
