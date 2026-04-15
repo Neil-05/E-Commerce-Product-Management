@@ -1,0 +1,113 @@
+2026-04-01 00:00:57 [INF] User logged in: neilparkhe@gmail.com
+2026-04-01 13:03:12 [INF] User logged in: neilparkhe@gmail.com
+2026-04-01 13:04:18 [INF] User logged in: neilparkhe@gmail.com
+2026-04-01 13:07:13 [INF] User logged in: neilparkhe@gmail.com
+2026-04-01 13:14:20 [INF] [Correlation:f49d9a9d-f97c-464e-b4ee-ecc8fb42cfdd] User logged in: neilparkhe@gmail.com
+2026-04-01 13:27:27 [INF] [REQUEST] POST /api/auth/login
+2026-04-01 13:27:28 [INF] [RESPONSE] 200
+2026-04-01 13:28:16 [INF] [REQUEST] POST /api/auth/login
+2026-04-01 13:28:16 [INF] [RESPONSE] 200
+2026-04-01 13:29:12 [INF] [REQUEST] POST /api/auth/login
+2026-04-01 13:29:14 [INF] [RESPONSE] 200
+2026-04-01 13:30:09 [INF] [REQUEST] POST /api/auth/login
+2026-04-01 13:30:10 [INF] [RESPONSE] 200
+2026-04-01 14:10:33 [INF] [REQUEST] POST /api/auth/login
+2026-04-01 14:10:34 [INF] User logged in: neilparkhe@gmail.com
+2026-04-01 14:10:34 [INF] [RESPONSE] 200
+2026-04-01 14:17:20 [INF] [Identity] [CID:2b7390f9-5207-4a3a-9a3e-8a3968c16246] [REQUEST] POST /api/auth/login
+2026-04-01 14:17:21 [INF] [Identity] [CID:2b7390f9-5207-4a3a-9a3e-8a3968c16246] User logged in: neilparkhe@gmail.com
+2026-04-01 14:17:21 [INF] [Identity] [CID:2b7390f9-5207-4a3a-9a3e-8a3968c16246] [RESPONSE] 200
+2026-04-01 14:17:49 [INF] [Identity] [CID:974d7b73-67f1-417d-a05d-f071051db62e] [REQUEST] POST /api/auth/login
+2026-04-01 14:17:49 [INF] [Identity] [CID:974d7b73-67f1-417d-a05d-f071051db62e] User logged in: niku@test.com
+2026-04-01 14:17:49 [INF] [Identity] [CID:974d7b73-67f1-417d-a05d-f071051db62e] [RESPONSE] 200
+2026-04-01 14:25:19 [INF] [Identity] [CID:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] [REQUEST] POST /api/auth/login
+2026-04-01 14:25:19 [INF] [Identity] [CID:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] [Correlation:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] Request: POST /api/auth/login
+2026-04-01 14:25:20 [WRN] [Identity] [CID:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] Invalid login attempt: neil@gmail.com
+2026-04-01 14:25:26 [ERR] [Identity] [CID:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 64
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-01 14:25:26 [INF] [Identity] [CID:60ec25ed-433c-4923-a9b6-a1c7bd99cc5c] [RESPONSE] 500
+2026-04-01 14:25:37 [INF] [Identity] [CID:164240a1-95f1-4b41-9ac7-660eb31ca747] [REQUEST] POST /api/auth/login
+2026-04-01 14:25:37 [INF] [Identity] [CID:164240a1-95f1-4b41-9ac7-660eb31ca747] [Correlation:164240a1-95f1-4b41-9ac7-660eb31ca747] Request: POST /api/auth/login
+2026-04-01 14:25:38 [INF] [Identity] [CID:164240a1-95f1-4b41-9ac7-660eb31ca747] User logged in: neilparkhe@gmail.com
+2026-04-01 14:25:38 [INF] [Identity] [CID:164240a1-95f1-4b41-9ac7-660eb31ca747] [Correlation:164240a1-95f1-4b41-9ac7-660eb31ca747] Response: 200
+2026-04-01 14:25:38 [INF] [Identity] [CID:164240a1-95f1-4b41-9ac7-660eb31ca747] [RESPONSE] 200
+2026-04-01 21:20:49 [INF] [Identity] [CID:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] [REQUEST] POST /api/auth/login
+2026-04-01 21:20:49 [INF] [Identity] [CID:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] [Correlation:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] Request: POST /api/auth/login
+2026-04-01 21:20:50 [INF] [Identity] [CID:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] User logged in: neilparkhe@gmail.com
+2026-04-01 21:20:50 [INF] [Identity] [CID:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] [Correlation:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] Response: 200
+2026-04-01 21:20:50 [INF] [Identity] [CID:5dfc6e69-1adc-4a23-a7ec-acb9b859042c] [RESPONSE] 200
+2026-04-01 22:24:57 [INF] [Identity] [CID:edc57c33-1e2f-4e71-9960-716a0108f7e9] [REQUEST] GET /api/auth/login
+2026-04-01 22:24:57 [INF] [Identity] [CID:edc57c33-1e2f-4e71-9960-716a0108f7e9] [Correlation:edc57c33-1e2f-4e71-9960-716a0108f7e9] Request: GET /api/auth/login
+2026-04-01 22:24:57 [INF] [Identity] [CID:edc57c33-1e2f-4e71-9960-716a0108f7e9] [Correlation:edc57c33-1e2f-4e71-9960-716a0108f7e9] Response: 405
+2026-04-01 22:24:57 [INF] [Identity] [CID:edc57c33-1e2f-4e71-9960-716a0108f7e9] [RESPONSE] 405
+2026-04-01 22:25:29 [INF] [Identity] [CID:4479bc0d-25d9-4571-918e-c7f78ae6b750] [REQUEST] POST /api/auth/login
+2026-04-01 22:25:29 [INF] [Identity] [CID:4479bc0d-25d9-4571-918e-c7f78ae6b750] [Correlation:4479bc0d-25d9-4571-918e-c7f78ae6b750] Request: POST /api/auth/login
+2026-04-01 22:25:30 [ERR] [Identity] [CID:4479bc0d-25d9-4571-918e-c7f78ae6b750] Failed executing DbCommand (47ms) [Parameters=[@email='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[OtpExpiry], [u].[PasswordHash], [u].[RefreshToken], [u].[RefreshTokenExpiry], [u].[ResetOtp], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @email
+2026-04-01 22:25:30 [ERR] [Identity] [CID:4479bc0d-25d9-4571-918e-c7f78ae6b750] An exception occurred while iterating over the results of a query for context type 'IdentityService.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RefreshToken'.
+Invalid column name 'RefreshTokenExpiry'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ea0689a7-e02a-416f-a16c-ef8e87364852
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'RefreshToken'.
+Invalid column name 'RefreshTokenExpiry'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ea0689a7-e02a-416f-a16c-ef8e87364852
+Error Number:207,State:1,Class:16
+2026-04-01 22:26:53 [INF] [Identity] [CID:de2b7167-65fe-47bf-afa4-5e747c7b55a1] [REQUEST] POST /api/auth/login
+2026-04-01 22:26:53 [INF] [Identity] [CID:de2b7167-65fe-47bf-afa4-5e747c7b55a1] [Correlation:de2b7167-65fe-47bf-afa4-5e747c7b55a1] Request: POST /api/auth/login
+2026-04-01 22:26:54 [INF] [Identity] [CID:de2b7167-65fe-47bf-afa4-5e747c7b55a1] User logged in: neilparkhe@gmail.com
+2026-04-01 22:26:54 [INF] [Identity] [CID:de2b7167-65fe-47bf-afa4-5e747c7b55a1] [Correlation:de2b7167-65fe-47bf-afa4-5e747c7b55a1] Response: 200
+2026-04-01 22:26:54 [INF] [Identity] [CID:de2b7167-65fe-47bf-afa4-5e747c7b55a1] [RESPONSE] 200
+2026-04-01 22:27:46 [INF] [Identity] [CID:af64b1ff-3378-4bb2-a56c-a2e845873707] [REQUEST] POST /api/auth/refresh
+2026-04-01 22:27:46 [INF] [Identity] [CID:af64b1ff-3378-4bb2-a56c-a2e845873707] [Correlation:af64b1ff-3378-4bb2-a56c-a2e845873707] Request: POST /api/auth/refresh
+2026-04-01 22:27:46 [INF] [Identity] [CID:af64b1ff-3378-4bb2-a56c-a2e845873707] [Correlation:af64b1ff-3378-4bb2-a56c-a2e845873707] Response: 200
+2026-04-01 22:27:46 [INF] [Identity] [CID:af64b1ff-3378-4bb2-a56c-a2e845873707] [RESPONSE] 200
+2026-04-01 22:27:49 [INF] [Identity] [CID:0a2a013c-c702-495b-9af0-475afa098390] [REQUEST] POST /api/auth/refresh
+2026-04-01 22:27:49 [INF] [Identity] [CID:0a2a013c-c702-495b-9af0-475afa098390] [Correlation:0a2a013c-c702-495b-9af0-475afa098390] Request: POST /api/auth/refresh
+2026-04-01 22:27:49 [WRN] [Identity] [CID:0a2a013c-c702-495b-9af0-475afa098390] Invalid refresh token: neilparkhe@gmail.com
+2026-04-01 23:03:25 [INF] [Identity] [CID:8aefd7e4-e8e1-4f6e-8b92-78813628f992] [REQUEST] POST /api/auth/login
+2026-04-01 23:03:25 [INF] [Identity] [CID:8aefd7e4-e8e1-4f6e-8b92-78813628f992] [Correlation:8aefd7e4-e8e1-4f6e-8b92-78813628f992] Request: POST /api/auth/login
+2026-04-01 23:03:26 [INF] [Identity] [CID:8aefd7e4-e8e1-4f6e-8b92-78813628f992] User logged in: niku@test.com
+2026-04-01 23:03:26 [INF] [Identity] [CID:8aefd7e4-e8e1-4f6e-8b92-78813628f992] [Correlation:8aefd7e4-e8e1-4f6e-8b92-78813628f992] Response: 200
+2026-04-01 23:03:26 [INF] [Identity] [CID:8aefd7e4-e8e1-4f6e-8b92-78813628f992] [RESPONSE] 200

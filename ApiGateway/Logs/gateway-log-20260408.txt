@@ -1,0 +1,22 @@
+2026-04-08 23:33:24 [INF] [Gateway] [CID:c99efe87-07aa-40d7-9a0a-963cd377e197] [REQUEST] GET /swagger/index.html
+2026-04-08 23:33:24 [INF] [Gateway] [CID:c99efe87-07aa-40d7-9a0a-963cd377e197] [RESPONSE] 200
+2026-04-08 23:33:25 [INF] [Gateway] [CID:b2f9217c-88e3-43aa-bc2f-0aa01573ac0f] [REQUEST] GET /swagger/favicon-32x32.png
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] [REQUEST] GET /swagger/docs/v1/admin
+2026-04-08 23:33:25 [INF] [Gateway] [CID:b2f9217c-88e3-43aa-bc2f-0aa01573ac0f] [RESPONSE] 200
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] Start processing HTTP request GET http://localhost:5136/swagger/v1/swagger.json
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] Sending HTTP request GET http://localhost:5136/swagger/v1/swagger.json
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] Received HTTP response headers after 121.1932ms - 200
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] End processing HTTP request after 178.5458ms - 200
+2026-04-08 23:33:25 [INF] [Gateway] [CID:5677f13b-67c2-4c44-bc0a-78d8390cacd8] [RESPONSE] 200
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] [REQUEST] GET /swagger/docs/v1/identity
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] Start processing HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] Sending HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] Received HTTP response headers after 74.2025ms - 200
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] End processing HTTP request after 78.6881ms - 200
+2026-04-08 23:33:28 [INF] [Gateway] [CID:2137355b-a363-4d13-b5b4-f8a9259a69d4] [RESPONSE] 200
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] [REQUEST] GET /swagger/docs/v1/catalog
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] Start processing HTTP request GET http://localhost:5191/swagger/v1/swagger.json
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] Sending HTTP request GET http://localhost:5191/swagger/v1/swagger.json
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] Received HTTP response headers after 204.1733ms - 200
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] End processing HTTP request after 222.0974ms - 200
+2026-04-08 23:33:35 [INF] [Gateway] [CID:80ebd7aa-a01f-4ee9-bf7e-e05afefe7cff] [RESPONSE] 200

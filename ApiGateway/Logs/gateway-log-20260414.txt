@@ -1,0 +1,6 @@
+2026-04-14 22:59:18 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] [REQUEST] GET /swagger/docs/v1/identity
+2026-04-14 22:59:18 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] Start processing HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-14 22:59:18 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] Sending HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-14 22:59:18 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] Received HTTP response headers after 516.6169ms - 200
+2026-04-14 22:59:19 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] End processing HTTP request after 629.2402ms - 200
+2026-04-14 22:59:19 [INF] [Gateway] [CID:1ef040b9-fbdc-43b9-bafb-904a87f60bb3] [RESPONSE] 200

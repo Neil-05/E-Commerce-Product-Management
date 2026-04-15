@@ -1,0 +1,66 @@
+2026-04-09 00:15:50 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [REQUEST] GET /api/products
+2026-04-09 00:15:50 [INF] [Catalog] [CID:cff4086a-6cc0-4603-8cd8-72ad912f7748] [REQUEST] POST /api/products
+2026-04-09 00:15:51 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [Correlation:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] Request: GET /api/products
+2026-04-09 00:15:51 [INF] [Catalog] [CID:cff4086a-6cc0-4603-8cd8-72ad912f7748] [Correlation:cff4086a-6cc0-4603-8cd8-72ad912f7748] Request: POST /api/products
+2026-04-09 00:15:51 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [PRODUCT][GET][START]
+2026-04-09 00:15:51 [INF] [Catalog] [CID:cff4086a-6cc0-4603-8cd8-72ad912f7748] [Correlation:cff4086a-6cc0-4603-8cd8-72ad912f7748] Response: 400
+2026-04-09 00:15:51 [INF] [Catalog] [CID:cff4086a-6cc0-4603-8cd8-72ad912f7748] [RESPONSE] 400
+2026-04-09 00:15:53 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [PRODUCT][GET][SUCCESS] Count: 17
+2026-04-09 00:15:53 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [Correlation:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] Response: 200
+2026-04-09 00:15:54 [INF] [Catalog] [CID:0db472d1-19ba-49f5-b54b-7bc31f3c07f1] [RESPONSE] 200
+2026-04-09 00:18:10 [INF] [Catalog] [CID:8d680e85-6a34-4283-9c08-033c3ca62288] [REQUEST] POST /api/products
+2026-04-09 00:18:10 [INF] [Catalog] [CID:8d680e85-6a34-4283-9c08-033c3ca62288] [Correlation:8d680e85-6a34-4283-9c08-033c3ca62288] Request: POST /api/products
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [REQUEST] GET /api/products
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [Correlation:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] Request: GET /api/products
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [PRODUCT][GET][START]
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [PRODUCT][GET][SUCCESS] Count: 17
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [Correlation:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] Response: 200
+2026-04-09 00:18:10 [INF] [Catalog] [CID:fc19edd4-930c-4ee2-96b1-66e9d425a3b0] [RESPONSE] 200
+2026-04-09 00:18:10 [INF] [Catalog] [CID:8d680e85-6a34-4283-9c08-033c3ca62288] [Correlation:8d680e85-6a34-4283-9c08-033c3ca62288] Response: 200
+2026-04-09 00:18:10 [INF] [Catalog] [CID:8d680e85-6a34-4283-9c08-033c3ca62288] [RESPONSE] 200
+2026-04-09 00:18:15 [INF] [Catalog] [CID:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] [REQUEST] GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:15 [INF] [Catalog] [CID:1b6ddbf8-893b-45b9-ab71-235801c55956] [REQUEST] GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:16 [INF] [Catalog] [CID:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] [Correlation:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] Request: GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:16 [INF] [Catalog] [CID:1b6ddbf8-893b-45b9-ab71-235801c55956] [Correlation:1b6ddbf8-893b-45b9-ab71-235801c55956] Request: GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:16 [INF] [Catalog] [CID:1b6ddbf8-893b-45b9-ab71-235801c55956] [Correlation:1b6ddbf8-893b-45b9-ab71-235801c55956] Response: 200
+2026-04-09 00:18:17 [INF] [Catalog] [CID:1b6ddbf8-893b-45b9-ab71-235801c55956] [RESPONSE] 200
+2026-04-09 00:18:17 [INF] [Catalog] [CID:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] [Correlation:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] Response: 200
+2026-04-09 00:18:18 [INF] [Catalog] [CID:f6aeaf39-f364-4495-9ab5-8be1d8d7e55b] [RESPONSE] 200
+2026-04-09 00:18:19 [INF] [Catalog] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [REQUEST] GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:19 [INF] [Catalog] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [REQUEST] GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:19 [INF] [Catalog] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Correlation:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] Request: GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:19 [INF] [Catalog] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Correlation:363d6aeb-8265-4a48-a017-7f601d6ad61a] Request: GET /api/products/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:20 [INF] [Catalog] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Correlation:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] Response: 200
+2026-04-09 00:18:20 [INF] [Catalog] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [RESPONSE] 200
+2026-04-09 00:18:20 [INF] [Catalog] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Correlation:363d6aeb-8265-4a48-a017-7f601d6ad61a] Response: 200
+2026-04-09 00:18:20 [INF] [Catalog] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [RESPONSE] 200
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [REQUEST] GET /api/products
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [Correlation:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] Request: GET /api/products
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [PRODUCT][GET][START]
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [PRODUCT][GET][SUCCESS] Count: 18
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [Correlation:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] Response: 200
+2026-04-09 00:20:19 [INF] [Catalog] [CID:e7e034f8-f709-4eb0-a529-9e6fcf803c3b] [RESPONSE] 200
+2026-04-09 00:27:29 [INF] [Catalog] [CID:b0880054-a519-422d-8ad4-02b6bb43b26f] [REQUEST] POST /api/products
+2026-04-09 00:27:29 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [REQUEST] GET /api/products
+2026-04-09 00:27:29 [INF] [Catalog] [CID:b0880054-a519-422d-8ad4-02b6bb43b26f] [Correlation:b0880054-a519-422d-8ad4-02b6bb43b26f] Request: POST /api/products
+2026-04-09 00:27:29 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [Correlation:c91b6954-bc46-41bb-ad3f-bda60f912aaf] Request: GET /api/products
+2026-04-09 00:27:29 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [PRODUCT][GET][START]
+2026-04-09 00:27:29 [INF] [Catalog] [CID:b0880054-a519-422d-8ad4-02b6bb43b26f] [Correlation:b0880054-a519-422d-8ad4-02b6bb43b26f] Response: 401
+2026-04-09 00:27:29 [INF] [Catalog] [CID:b0880054-a519-422d-8ad4-02b6bb43b26f] [RESPONSE] 401
+2026-04-09 00:27:30 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [PRODUCT][GET][SUCCESS] Count: 18
+2026-04-09 00:27:30 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [Correlation:c91b6954-bc46-41bb-ad3f-bda60f912aaf] Response: 200
+2026-04-09 00:27:30 [INF] [Catalog] [CID:c91b6954-bc46-41bb-ad3f-bda60f912aaf] [RESPONSE] 200
+2026-04-09 00:28:43 [INF] [Catalog] [CID:016e32fb-540d-4c1a-a70a-c8a8a829e023] [REQUEST] POST /api/products
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [REQUEST] GET /api/products
+2026-04-09 00:28:43 [INF] [Catalog] [CID:016e32fb-540d-4c1a-a70a-c8a8a829e023] [Correlation:016e32fb-540d-4c1a-a70a-c8a8a829e023] Request: POST /api/products
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [Correlation:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] Request: GET /api/products
+2026-04-09 00:28:43 [INF] [Catalog] [CID:016e32fb-540d-4c1a-a70a-c8a8a829e023] [Correlation:016e32fb-540d-4c1a-a70a-c8a8a829e023] Response: 401
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [PRODUCT][GET][START]
+2026-04-09 00:28:43 [INF] [Catalog] [CID:016e32fb-540d-4c1a-a70a-c8a8a829e023] [RESPONSE] 401
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [PRODUCT][GET][SUCCESS] Count: 18
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [Correlation:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] Response: 200
+2026-04-09 00:28:43 [INF] [Catalog] [CID:cf2cedbf-64f5-44cd-a9b1-d9ad22fe318f] [RESPONSE] 200
+2026-04-09 00:39:33 [INF] [Catalog] [CID:ecc319c7-75f2-40f4-9e44-1d081eca7616] [REQUEST] POST /api/products
+2026-04-09 00:39:33 [INF] [Catalog] [CID:ecc319c7-75f2-40f4-9e44-1d081eca7616] [Correlation:ecc319c7-75f2-40f4-9e44-1d081eca7616] Request: POST /api/products
+2026-04-09 00:39:33 [INF] [Catalog] [CID:ecc319c7-75f2-40f4-9e44-1d081eca7616] [Correlation:ecc319c7-75f2-40f4-9e44-1d081eca7616] Response: 401
+2026-04-09 00:39:33 [INF] [Catalog] [CID:ecc319c7-75f2-40f4-9e44-1d081eca7616] [RESPONSE] 401

@@ -1,0 +1,22 @@
+2026-04-03 23:09:03 [INF] [Identity] [CID:6bbb5ac6-1629-4da0-892c-99a9486f87eb] [REQUEST] POST /api/auth/forgot-password
+2026-04-03 23:09:03 [INF] [Identity] [CID:6bbb5ac6-1629-4da0-892c-99a9486f87eb] [Correlation:6bbb5ac6-1629-4da0-892c-99a9486f87eb] Request: POST /api/auth/forgot-password
+2026-04-03 23:09:09 [INF] [Identity] [CID:6bbb5ac6-1629-4da0-892c-99a9486f87eb] [Correlation:6bbb5ac6-1629-4da0-892c-99a9486f87eb] Response: 200
+2026-04-03 23:09:09 [INF] [Identity] [CID:6bbb5ac6-1629-4da0-892c-99a9486f87eb] [RESPONSE] 200
+2026-04-03 23:10:07 [INF] [Identity] [CID:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] [REQUEST] POST /api/auth/reset-password
+2026-04-03 23:10:07 [INF] [Identity] [CID:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] [Correlation:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] Request: POST /api/auth/reset-password
+2026-04-03 23:10:07 [INF] [Identity] [CID:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] [Correlation:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] Response: 200
+2026-04-03 23:10:07 [INF] [Identity] [CID:6cc4c4dc-f5d9-4c0d-9c10-1f747334e82b] [RESPONSE] 200
+2026-04-03 23:10:10 [INF] [Identity] [CID:2af78cf9-3666-4764-bb26-a8baca8a4538] [REQUEST] POST /api/auth/reset-password
+2026-04-03 23:10:10 [INF] [Identity] [CID:2af78cf9-3666-4764-bb26-a8baca8a4538] [Correlation:2af78cf9-3666-4764-bb26-a8baca8a4538] Request: POST /api/auth/reset-password
+2026-04-03 23:12:15 [INF] [Identity] [CID:47631c43-43c0-4040-ad4f-8799dd26a29a] [REQUEST] POST /api/auth/reset-password
+2026-04-03 23:12:15 [INF] [Identity] [CID:47631c43-43c0-4040-ad4f-8799dd26a29a] [Correlation:47631c43-43c0-4040-ad4f-8799dd26a29a] Request: POST /api/auth/reset-password
+2026-04-03 23:13:06 [INF] [Identity] [CID:db70c261-d0a7-488d-9f17-0f51f94096de] [REQUEST] POST /api/auth/login
+2026-04-03 23:13:06 [INF] [Identity] [CID:db70c261-d0a7-488d-9f17-0f51f94096de] [Correlation:db70c261-d0a7-488d-9f17-0f51f94096de] Request: POST /api/auth/login
+2026-04-03 23:13:07 [INF] [Identity] [CID:db70c261-d0a7-488d-9f17-0f51f94096de] User logged in: neilparkhe@gmail.com
+2026-04-03 23:13:07 [INF] [Identity] [CID:db70c261-d0a7-488d-9f17-0f51f94096de] [Correlation:db70c261-d0a7-488d-9f17-0f51f94096de] Response: 200
+2026-04-03 23:13:07 [INF] [Identity] [CID:db70c261-d0a7-488d-9f17-0f51f94096de] [RESPONSE] 200
+2026-04-03 23:13:34 [INF] [Identity] [CID:76167a1a-f632-4f3c-9c8e-bbae57545913] [REQUEST] POST /api/auth/login
+2026-04-03 23:13:34 [INF] [Identity] [CID:76167a1a-f632-4f3c-9c8e-bbae57545913] [Correlation:76167a1a-f632-4f3c-9c8e-bbae57545913] Request: POST /api/auth/login
+2026-04-03 23:13:34 [INF] [Identity] [CID:76167a1a-f632-4f3c-9c8e-bbae57545913] User logged in: neilparkhe@gmail.com
+2026-04-03 23:13:34 [INF] [Identity] [CID:76167a1a-f632-4f3c-9c8e-bbae57545913] [Correlation:76167a1a-f632-4f3c-9c8e-bbae57545913] Response: 200
+2026-04-03 23:13:34 [INF] [Identity] [CID:76167a1a-f632-4f3c-9c8e-bbae57545913] [RESPONSE] 200

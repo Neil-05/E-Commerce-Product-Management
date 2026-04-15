@@ -1,0 +1,18 @@
+2026-04-10 02:02:41 [INF] [Gateway] [CID:fffa82a6-231e-49d1-9966-41bdcb15ae5a] [REQUEST] GET /swagger/index.html
+2026-04-10 02:02:41 [INF] [Gateway] [CID:fffa82a6-231e-49d1-9966-41bdcb15ae5a] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:8b2a673e-aa9b-4523-a973-2adb3a388f29] [REQUEST] GET /swagger/swagger-ui.css
+2026-04-10 02:02:41 [INF] [Gateway] [CID:2b0c650d-d56c-4357-82ea-15e509fbcfb6] [REQUEST] GET /swagger/index.css
+2026-04-10 02:02:41 [INF] [Gateway] [CID:352458bb-6bb6-4152-9e5b-0e5d82dbb5eb] [REQUEST] GET /swagger/swagger-ui-bundle.js
+2026-04-10 02:02:41 [INF] [Gateway] [CID:f11cb306-0dde-4ffe-be36-889d46e5bfc1] [REQUEST] GET /swagger/swagger-ui-standalone-preset.js
+2026-04-10 02:02:41 [INF] [Gateway] [CID:495baf3b-538d-4a07-a278-e6bf5b4f6c51] [REQUEST] GET /swagger/index.js
+2026-04-10 02:02:41 [INF] [Gateway] [CID:2b0c650d-d56c-4357-82ea-15e509fbcfb6] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:8b2a673e-aa9b-4523-a973-2adb3a388f29] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:495baf3b-538d-4a07-a278-e6bf5b4f6c51] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:f11cb306-0dde-4ffe-be36-889d46e5bfc1] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:352458bb-6bb6-4152-9e5b-0e5d82dbb5eb] [RESPONSE] 200
+2026-04-10 02:02:41 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] [REQUEST] GET /swagger/docs/v1/identity
+2026-04-10 02:02:41 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] Start processing HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-10 02:02:41 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] Sending HTTP request GET http://localhost:5085/swagger/v1/swagger.json
+2026-04-10 02:02:42 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] Received HTTP response headers after 193.5082ms - 200
+2026-04-10 02:02:42 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] End processing HTTP request after 267.3696ms - 200
+2026-04-10 02:02:42 [INF] [Gateway] [CID:047d1db1-fc45-4d1f-9ed7-ed0b14c7de17] [RESPONSE] 200

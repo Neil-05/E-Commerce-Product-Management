@@ -1,0 +1,59 @@
+2026-04-09 00:18:17 [INF] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [REQUEST] POST /api/workflow/submit/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:17 [INF] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [REQUEST] POST /api/workflow/approve/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:18 [INF] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Correlation:363d6aeb-8265-4a48-a017-7f601d6ad61a] Request: POST /api/workflow/submit/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:18 [INF] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Correlation:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] Request: POST /api/workflow/approve/36f8c246-f348-4a93-b6d9-049a101721b8
+2026-04-09 00:18:19 [INF] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Workflow][WORKFLOW][APPROVE][START] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" User: neilparkhe@gmail.com ⇢
+2026-04-09 00:18:19 [INF] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" User: neilparkhe@gmail.com ⇢
+2026-04-09 00:18:19 [INF] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" User: neilparkhe@gmail.com ⇢
+2026-04-09 00:18:19 [INF] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" User: neilparkhe@gmail.com ⇢
+2026-04-09 00:18:20 [INF] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" Status: Published ⇢
+2026-04-09 00:18:20 [INF] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" Status: Published ⇢
+2026-04-09 00:18:20 [WRN] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Workflow][WORKFLOW][STATUS][INVALID] Submit ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" CurrentStatus: Published ⇢
+2026-04-09 00:18:20 [WRN] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Workflow][WORKFLOW][APPROVE][INVALID] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" CurrentStatus: Published ⇢
+2026-04-09 00:18:20 [ERR] [Workflow] [CID:363d6aeb-8265-4a48-a017-7f601d6ad61a] [Workflow][WORKFLOW][STATUS][ERROR] Submit ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" ✖ ⇢
+System.Exception: Only Draft products can be submitted
+   at WorkflowService.Services.WorkflowManager.Submit(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Services\WorkflowManager.cs:line 75
+2026-04-09 00:18:20 [ERR] [Workflow] [CID:67d23eda-bd7e-4e4c-a7a7-0b94efca216c] [Workflow][WORKFLOW][APPROVE][ERROR] ProductId: "36f8c246-f348-4a93-b6d9-049a101721b8" ✖ ⇢
+System.Exception: Only InReview products can be approved
+   at WorkflowService.Services.WorkflowManager.Approve(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Services\WorkflowManager.cs:line 101
+2026-04-09 00:20:23 [ERR] [Workflow] [CID:] An unhandled exception has occurred while executing the request.
+System.Exception: Only Draft products can be submitted
+   at WorkflowService.Services.WorkflowManager.Submit(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Services\WorkflowManager.cs:line 75
+   at WorkflowService.Controller.WorkflowController.Submit(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Controller\WorkflowController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at WorkflowService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at WorkflowService.Middleware.CorrelationIdMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Middleware\CorrelationIdMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-09 00:20:23 [ERR] [Workflow] [CID:] An unhandled exception has occurred while executing the request.
+System.Exception: Only InReview products can be approved
+   at WorkflowService.Services.WorkflowManager.Approve(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Services\WorkflowManager.cs:line 101
+   at WorkflowService.Controller.WorkflowController.Approve(Guid productId) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Controller\WorkflowController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at WorkflowService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at WorkflowService.Middleware.CorrelationIdMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\WorkflowService\Middleware\CorrelationIdMiddleware.cs:line 42
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)

@@ -1,0 +1,135 @@
+2026-04-09 00:12:06 [INF] [Identity] [CID:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] [REQUEST] POST /api/auth/login
+2026-04-09 00:12:06 [INF] [Identity] [CID:24115abb-ae10-44fa-bb41-f79fc215c6d3] [REQUEST] POST /api/auth/login
+2026-04-09 00:12:06 [INF] [Identity] [CID:24115abb-ae10-44fa-bb41-f79fc215c6d3] [Correlation:24115abb-ae10-44fa-bb41-f79fc215c6d3] Request: POST /api/auth/login
+2026-04-09 00:12:06 [INF] [Identity] [CID:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] [Correlation:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] Request: POST /api/auth/login
+2026-04-09 00:12:14 [WRN] [Identity] [CID:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] Invalid login attempt: neil@gmail.com
+2026-04-09 00:14:36 [ERR] [Identity] [CID:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 68
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-09 00:14:36 [INF] [Identity] [CID:14ad2425-03ea-4cc1-8266-6c83beb3747e] [REQUEST] POST /api/auth/login
+2026-04-09 00:14:36 [INF] [Identity] [CID:14ad2425-03ea-4cc1-8266-6c83beb3747e] [Correlation:14ad2425-03ea-4cc1-8266-6c83beb3747e] Request: POST /api/auth/login
+2026-04-09 00:14:36 [INF] [Identity] [CID:a8269cb3-b3db-4edb-a3d2-07c6b99658e3] [RESPONSE] 500
+2026-04-09 00:14:36 [INF] [Identity] [CID:14ad2425-03ea-4cc1-8266-6c83beb3747e] User logged in: neilparkhe@gmail.com
+2026-04-09 00:14:36 [INF] [Identity] [CID:24115abb-ae10-44fa-bb41-f79fc215c6d3] User logged in: neilparkhe@gmail.com
+2026-04-09 00:14:37 [INF] [Identity] [CID:24115abb-ae10-44fa-bb41-f79fc215c6d3] [Correlation:24115abb-ae10-44fa-bb41-f79fc215c6d3] Response: 200
+2026-04-09 00:14:37 [INF] [Identity] [CID:24115abb-ae10-44fa-bb41-f79fc215c6d3] [RESPONSE] 200
+2026-04-09 00:14:37 [INF] [Identity] [CID:14ad2425-03ea-4cc1-8266-6c83beb3747e] [Correlation:14ad2425-03ea-4cc1-8266-6c83beb3747e] Response: 200
+2026-04-09 00:14:37 [INF] [Identity] [CID:14ad2425-03ea-4cc1-8266-6c83beb3747e] [RESPONSE] 200
+2026-04-09 00:15:28 [INF] [Identity] [CID:d7157774-2787-4c48-89cf-3ddb10d8f441] [REQUEST] POST /api/auth/login
+2026-04-09 00:15:28 [INF] [Identity] [CID:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] [REQUEST] POST /api/auth/login
+2026-04-09 00:15:28 [INF] [Identity] [CID:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] [Correlation:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] Request: POST /api/auth/login
+2026-04-09 00:15:28 [INF] [Identity] [CID:d7157774-2787-4c48-89cf-3ddb10d8f441] [Correlation:d7157774-2787-4c48-89cf-3ddb10d8f441] Request: POST /api/auth/login
+2026-04-09 00:15:28 [WRN] [Identity] [CID:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] Invalid login attempt: neil@gmail.com
+2026-04-09 00:15:45 [ERR] [Identity] [CID:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 68
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-09 00:15:45 [INF] [Identity] [CID:1ba8472c-e44b-4e03-83c1-0146cb19eeb3] [RESPONSE] 500
+2026-04-09 00:15:46 [INF] [Identity] [CID:d7157774-2787-4c48-89cf-3ddb10d8f441] User logged in: neilparkhe@gmail.com
+2026-04-09 00:15:46 [INF] [Identity] [CID:d7157774-2787-4c48-89cf-3ddb10d8f441] [Correlation:d7157774-2787-4c48-89cf-3ddb10d8f441] Response: 200
+2026-04-09 00:15:46 [INF] [Identity] [CID:d7157774-2787-4c48-89cf-3ddb10d8f441] [RESPONSE] 200
+2026-04-09 00:17:55 [INF] [Identity] [CID:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] [REQUEST] POST /api/auth/login
+2026-04-09 00:17:55 [INF] [Identity] [CID:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] [Correlation:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] Request: POST /api/auth/login
+2026-04-09 00:17:55 [INF] [Identity] [CID:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] [REQUEST] POST /api/auth/login
+2026-04-09 00:17:55 [INF] [Identity] [CID:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] [Correlation:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] Request: POST /api/auth/login
+2026-04-09 00:17:55 [WRN] [Identity] [CID:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] Invalid login attempt: neil@gmail.com
+2026-04-09 00:18:09 [ERR] [Identity] [CID:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 68
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-09 00:18:09 [INF] [Identity] [CID:8cbd3a50-bfb2-4ca1-b2b6-e2afc7072beb] [RESPONSE] 500
+2026-04-09 00:18:09 [INF] [Identity] [CID:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] User logged in: neilparkhe@gmail.com
+2026-04-09 00:18:09 [INF] [Identity] [CID:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] [Correlation:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] Response: 200
+2026-04-09 00:18:09 [INF] [Identity] [CID:fa278b5c-fe95-4687-bc03-fee3c5d93ae7] [RESPONSE] 200
+2026-04-09 00:27:29 [INF] [Identity] [CID:e73cde04-9d73-467b-9cad-34d0a731b22f] [REQUEST] POST /api/auth/login
+2026-04-09 00:27:29 [INF] [Identity] [CID:b77e5b21-0110-4a6d-b08e-0e09396d51ef] [REQUEST] POST /api/auth/login
+2026-04-09 00:27:29 [INF] [Identity] [CID:b77e5b21-0110-4a6d-b08e-0e09396d51ef] [Correlation:b77e5b21-0110-4a6d-b08e-0e09396d51ef] Request: POST /api/auth/login
+2026-04-09 00:27:29 [INF] [Identity] [CID:e73cde04-9d73-467b-9cad-34d0a731b22f] [Correlation:e73cde04-9d73-467b-9cad-34d0a731b22f] Request: POST /api/auth/login
+2026-04-09 00:27:30 [WRN] [Identity] [CID:e73cde04-9d73-467b-9cad-34d0a731b22f] Invalid login attempt: neil@gmail.com
+2026-04-09 00:27:50 [ERR] [Identity] [CID:e73cde04-9d73-467b-9cad-34d0a731b22f] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 68
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-09 00:27:50 [INF] [Identity] [CID:e73cde04-9d73-467b-9cad-34d0a731b22f] [RESPONSE] 500
+2026-04-09 00:27:50 [INF] [Identity] [CID:b77e5b21-0110-4a6d-b08e-0e09396d51ef] User logged in: neilparkhe@gmail.com
+2026-04-09 00:27:50 [INF] [Identity] [CID:b77e5b21-0110-4a6d-b08e-0e09396d51ef] [Correlation:b77e5b21-0110-4a6d-b08e-0e09396d51ef] Response: 200
+2026-04-09 00:27:50 [INF] [Identity] [CID:b77e5b21-0110-4a6d-b08e-0e09396d51ef] [RESPONSE] 200
+2026-04-09 00:28:43 [INF] [Identity] [CID:2615d21a-9fee-4792-9623-58ccea9deed5] [REQUEST] POST /api/auth/login
+2026-04-09 00:28:43 [INF] [Identity] [CID:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] [REQUEST] POST /api/auth/login
+2026-04-09 00:28:43 [INF] [Identity] [CID:2615d21a-9fee-4792-9623-58ccea9deed5] [Correlation:2615d21a-9fee-4792-9623-58ccea9deed5] Request: POST /api/auth/login
+2026-04-09 00:28:43 [INF] [Identity] [CID:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] [Correlation:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] Request: POST /api/auth/login
+2026-04-09 00:28:43 [WRN] [Identity] [CID:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] Invalid login attempt: neil@gmail.com
+2026-04-09 00:39:33 [ERR] [Identity] [CID:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] Invalid credentials
+System.Exception: Invalid credentials
+   at IdentityService.Services.AuthService.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Services\AuthService.cs:line 68
+   at AuthController.Login(LoginRequestDto dto) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Controllers\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityService.Middleware.RequestLoggingMiddleware.Invoke(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\RequestLoggingMiddleware.cs:line 25
+   at IdentityService.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Neil\Desktop\E-Commerce Management\Solution1\IdentityService\Middleware\ExceptionMiddleware.cs:line 18
+2026-04-09 00:39:33 [INF] [Identity] [CID:f0e9ba57-fee2-4a37-8679-f60a9f5dfa90] [RESPONSE] 500
+2026-04-09 00:39:33 [INF] [Identity] [CID:2615d21a-9fee-4792-9623-58ccea9deed5] User logged in: neilparkhe@gmail.com
+2026-04-09 00:39:33 [INF] [Identity] [CID:2615d21a-9fee-4792-9623-58ccea9deed5] [Correlation:2615d21a-9fee-4792-9623-58ccea9deed5] Response: 200
+2026-04-09 00:39:33 [INF] [Identity] [CID:2615d21a-9fee-4792-9623-58ccea9deed5] [RESPONSE] 200

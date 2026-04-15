@@ -1,0 +1,70 @@
+2026-04-01 13:31:56 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "123069f3-533d-4121-82d9-af3750957f81" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:31:56 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "123069f3-533d-4121-82d9-af3750957f81" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:31:56 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "123069f3-533d-4121-82d9-af3750957f81" Status: Draft ⇢
+2026-04-01 13:31:56 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "123069f3-533d-4121-82d9-af3750957f81" → InReview User: neilparkhe@gmail.com ⇢
+2026-04-01 13:31:57 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "123069f3-533d-4121-82d9-af3750957f81" → InReview ✓ ⇢
+2026-04-01 13:31:57 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][SUCCESS] Submit ProductId: "123069f3-533d-4121-82d9-af3750957f81" → InReview ✓ ⇢
+2026-04-01 13:44:24 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:44:24 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:44:24 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" Status: Draft ⇢
+2026-04-01 13:44:24 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → InReview User: neilparkhe@gmail.com ⇢
+2026-04-01 13:44:25 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → InReview ✓ ⇢
+2026-04-01 13:44:25 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][SUCCESS] Submit ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → InReview ✓ ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][APPROVE][START] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" User: neilparkhe@gmail.com ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" Status: InReview ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → Approved User: neilparkhe@gmail.com ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → Approved ✓ ⇢
+2026-04-01 13:45:12 [INF] [Workflow] [Workflow][WORKFLOW][APPROVE][SUCCESS] ProductId: "4a50106d-341b-4f27-8402-48bc5786aa6a" → Approved ✓ ⇢
+2026-04-01 14:11:43 [INF] [Workflow] [Correlation:26d97629-3026-43a9-8c48-ce55ec7a7ca9] Request: POST /api/workflow/submit/ceda0f10-9869-4c4f-86d7-2c8d4d0725bc
+2026-04-01 14:11:43 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" User: neilparkhe@gmail.com ⇢
+2026-04-01 14:11:43 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" User: neilparkhe@gmail.com ⇢
+2026-04-01 14:11:43 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" Status: Draft ⇢
+2026-04-01 14:11:43 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" → InReview User: neilparkhe@gmail.com ⇢
+2026-04-01 14:11:44 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" → InReview ✓ ⇢
+2026-04-01 14:11:44 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][SUCCESS] Submit ProductId: "ceda0f10-9869-4c4f-86d7-2c8d4d0725bc" → InReview ✓ ⇢
+2026-04-01 14:11:44 [INF] [Workflow] [Correlation:26d97629-3026-43a9-8c48-ce55ec7a7ca9] Response: 200
+2026-04-01 14:27:02 [INF] [Workflow] [Correlation:62c29b9b-9317-410c-ab3e-20f9875816e8] Request: POST /api/workflow/submit/5ded3718-9dd8-4b22-b76b-306bfef073ae
+2026-04-01 14:27:02 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" User: neilparkhe@gmail.com ⇢
+2026-04-01 14:27:02 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" User: neilparkhe@gmail.com ⇢
+2026-04-01 14:27:02 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" Status: Draft ⇢
+2026-04-01 14:27:02 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" → InReview User: neilparkhe@gmail.com ⇢
+2026-04-01 14:27:03 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" → InReview ✓ ⇢
+2026-04-01 14:27:03 [INF] [Workflow] [Workflow][WORKFLOW][STATUS][SUCCESS] Submit ProductId: "5ded3718-9dd8-4b22-b76b-306bfef073ae" → InReview ✓ ⇢
+2026-04-01 14:27:03 [INF] [Workflow] [Correlation:62c29b9b-9317-410c-ab3e-20f9875816e8] Response: 200
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [REQUEST] POST /api/workflow/submit/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Request: POST /api/workflow/submit/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][START] Submit ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" User: neilparkhe@gmail.com ⇢
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" User: neilparkhe@gmail.com ⇢
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" Status: Draft ⇢
+2026-04-01 21:27:34 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → InReview User: neilparkhe@gmail.com ⇢
+2026-04-01 21:27:35 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → InReview ✓ ⇢
+2026-04-01 21:27:35 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Workflow][WORKFLOW][STATUS][SUCCESS] Submit ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → InReview ✓ ⇢
+2026-04-01 21:27:35 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Response: 200
+2026-04-01 21:27:35 [INF] [Workflow] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [RESPONSE] 200
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [REQUEST] POST /api/workflow/approve/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Request: POST /api/workflow/approve/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][APPROVE][START] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" User: neilparkhe@gmail.com ⇢
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][STATUS][GET][START] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" User: neilparkhe@gmail.com ⇢
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][STATUS][GET][SUCCESS] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" Status: InReview ⇢
+2026-04-01 21:49:39 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][STATUS][UPDATE][START] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → Approved User: neilparkhe@gmail.com ⇢
+2026-04-01 21:49:40 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][STATUS][UPDATE][SUCCESS] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → Approved ✓ ⇢
+2026-04-01 21:49:40 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Workflow][WORKFLOW][APPROVE][SUCCESS] ProductId: "bc96f819-d821-4d0e-9249-50335c0057b1" → Approved ✓ ⇢
+2026-04-01 21:49:40 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Response: 200
+2026-04-01 21:49:40 [INF] [Workflow] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [RESPONSE] 200
+2026-04-01 22:58:45 [INF] [Workflow] [CID:9cb7236d-e738-40bf-9109-e4096607113d] [REQUEST] POST /api/auth/login
+2026-04-01 22:58:45 [INF] [Workflow] [CID:9cb7236d-e738-40bf-9109-e4096607113d] [Correlation:9cb7236d-e738-40bf-9109-e4096607113d] Request: POST /api/auth/login
+2026-04-01 22:58:45 [INF] [Workflow] [CID:9cb7236d-e738-40bf-9109-e4096607113d] [Correlation:9cb7236d-e738-40bf-9109-e4096607113d] Response: 404
+2026-04-01 22:58:45 [INF] [Workflow] [CID:9cb7236d-e738-40bf-9109-e4096607113d] [RESPONSE] 404
+2026-04-01 22:58:51 [INF] [Workflow] [CID:c2a80289-4e5b-46f9-95ec-b44387700541] [REQUEST] POST /api/auth/login
+2026-04-01 22:58:51 [INF] [Workflow] [CID:c2a80289-4e5b-46f9-95ec-b44387700541] [Correlation:c2a80289-4e5b-46f9-95ec-b44387700541] Request: POST /api/auth/login
+2026-04-01 22:58:51 [INF] [Workflow] [CID:c2a80289-4e5b-46f9-95ec-b44387700541] [Correlation:c2a80289-4e5b-46f9-95ec-b44387700541] Response: 404
+2026-04-01 22:58:51 [INF] [Workflow] [CID:c2a80289-4e5b-46f9-95ec-b44387700541] [RESPONSE] 404
+2026-04-01 22:59:33 [INF] [Workflow] [CID:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] [REQUEST] POST /api/auth/login
+2026-04-01 22:59:33 [INF] [Workflow] [CID:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] [Correlation:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] Request: POST /api/auth/login
+2026-04-01 22:59:33 [INF] [Workflow] [CID:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] [Correlation:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] Response: 404
+2026-04-01 22:59:33 [INF] [Workflow] [CID:bfce0078-2aa4-45e9-8eaa-6da6e5d4f9ed] [RESPONSE] 404
+2026-04-01 23:01:50 [INF] [Workflow] [CID:4fc79110-5485-419a-84c0-1f7684ee52c8] [REQUEST] POST /api/auth/login
+2026-04-01 23:01:50 [INF] [Workflow] [CID:4fc79110-5485-419a-84c0-1f7684ee52c8] [Correlation:4fc79110-5485-419a-84c0-1f7684ee52c8] Request: POST /api/auth/login
+2026-04-01 23:01:50 [INF] [Workflow] [CID:4fc79110-5485-419a-84c0-1f7684ee52c8] [Correlation:4fc79110-5485-419a-84c0-1f7684ee52c8] Response: 404
+2026-04-01 23:01:50 [INF] [Workflow] [CID:4fc79110-5485-419a-84c0-1f7684ee52c8] [RESPONSE] 404

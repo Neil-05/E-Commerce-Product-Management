@@ -1,0 +1,211 @@
+2026-04-01 00:15:58 [INF] [Catalog] Request: GET /api/products
+2026-04-01 00:15:58 [INF] [Catalog] [PRODUCT][GET][START]
+2026-04-01 00:15:59 [INF] [Catalog] [PRODUCT][GET][SUCCESS] Count: 13
+2026-04-01 00:15:59 [INF] [Catalog] Response: 200
+2026-04-01 00:17:57 [INF] [Catalog] Request: POST /api/products/
+2026-04-01 00:17:58 [INF] [Catalog] Response: 401
+2026-04-01 00:18:14 [INF] [Catalog] Request: POST /api/products/
+2026-04-01 00:18:14 [INF] [Catalog] [PRODUCT][CREATE][START] SKU: TEST-007
+2026-04-01 00:18:14 [INF] [Catalog] [PRODUCT][CREATE][SUCCESS] SKU: TEST-007 Id: "123069f3-533d-4121-82d9-af3750957f81"
+2026-04-01 00:18:14 [INF] [Catalog] Response: 200
+2026-04-01 13:29:26 [INF] [Catalog] [Correlation:2604288c-cb72-4d58-98ce-e761e4a5be79] Request: GET /api/products
+2026-04-01 13:29:26 [INF] [Catalog] [PRODUCT][GET][START]
+2026-04-01 13:29:27 [INF] [Catalog] [PRODUCT][GET][SUCCESS] Count: 14
+2026-04-01 13:29:27 [INF] [Catalog] [Correlation:2604288c-cb72-4d58-98ce-e761e4a5be79] Response: 200
+2026-04-01 13:30:52 [INF] [Catalog] [Correlation:c8e14ed3-df3f-4192-858d-e5570a92559c] Request: POST /api/products/
+2026-04-01 13:30:53 [INF] [Catalog] [PRODUCT][CREATE][START] SKU: TEST-008
+2026-04-01 13:30:53 [INF] [Catalog] [PRODUCT][CREATE][SUCCESS] SKU: TEST-008 Id: "4a50106d-341b-4f27-8402-48bc5786aa6a"
+2026-04-01 13:30:54 [INF] [Catalog] [Correlation:c8e14ed3-df3f-4192-858d-e5570a92559c] Response: 200
+2026-04-01 13:31:03 [INF] [Catalog] [Correlation:20976955-e5b4-4a3c-afa3-530b569081a2] Request: GET /api/products
+2026-04-01 13:31:03 [INF] [Catalog] [PRODUCT][GET][START]
+2026-04-01 13:31:03 [INF] [Catalog] [PRODUCT][GET][SUCCESS] Count: 15
+2026-04-01 13:31:04 [INF] [Catalog] [Correlation:20976955-e5b4-4a3c-afa3-530b569081a2] Response: 200
+2026-04-01 13:31:56 [INF] [Catalog] [Correlation:714500a6-a242-4e1d-b575-3990dec5df32] Request: GET /api/products/123069f3-533d-4121-82d9-af3750957f81
+2026-04-01 13:31:56 [INF] [Catalog] [PRODUCT][GET][START] Id: "123069f3-533d-4121-82d9-af3750957f81"
+2026-04-01 13:31:56 [INF] [Catalog] [PRODUCT][GET][SUCCESS] Id: "123069f3-533d-4121-82d9-af3750957f81" SKU: TEST-007
+2026-04-01 13:31:56 [INF] [Catalog] [Correlation:714500a6-a242-4e1d-b575-3990dec5df32] Response: 200
+2026-04-01 13:31:57 [INF] [Catalog] [Correlation:15ff41a2-f9f0-4633-8677-a0cb2421f582] Request: PUT /api/products/123069f3-533d-4121-82d9-af3750957f81/status
+2026-04-01 13:31:57 [INF] [Catalog] [PRODUCT][UPDATE][STATUS][START] Id: "123069f3-533d-4121-82d9-af3750957f81" Status: InReview
+2026-04-01 13:31:57 [INF] [Catalog] [PRODUCT][UPDATE][STATUS][SUCCESS] Id: "123069f3-533d-4121-82d9-af3750957f81" Status: InReview
+2026-04-01 13:31:57 [INF] [Catalog] [Correlation:15ff41a2-f9f0-4633-8677-a0cb2421f582] Response: 200
+2026-04-01 13:44:16 [INF] [Catalog] [REQUEST] POST /api/products/
+2026-04-01 13:44:16 [INF] [Catalog] [Correlation:7cdfda28-572e-4dce-865c-e5ef1f3f2db8] Request: POST /api/products/
+2026-04-01 13:44:17 [INF] [Catalog] [Correlation:7cdfda28-572e-4dce-865c-e5ef1f3f2db8] Response: 200
+2026-04-01 13:44:17 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 13:44:24 [INF] [Catalog] [REQUEST] GET /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a
+2026-04-01 13:44:24 [INF] [Catalog] [Correlation:d825020c-3748-4826-aae9-537833f7f856] Request: GET /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a
+2026-04-01 13:44:24 [INF] [Catalog] [Correlation:d825020c-3748-4826-aae9-537833f7f856] Response: 200
+2026-04-01 13:44:24 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 13:44:25 [INF] [Catalog] [REQUEST] PUT /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a/status
+2026-04-01 13:44:25 [INF] [Catalog] [Correlation:801ae091-88e9-4bad-893e-4261fa16f349] Request: PUT /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a/status
+2026-04-01 13:44:25 [INF] [Catalog] [Correlation:801ae091-88e9-4bad-893e-4261fa16f349] Response: 200
+2026-04-01 13:44:25 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 13:45:12 [INF] [Catalog] [REQUEST] GET /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a
+2026-04-01 13:45:12 [INF] [Catalog] [Correlation:61d8752e-ee8c-4764-8f6b-24dfd5ddc6ff] Request: GET /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a
+2026-04-01 13:45:12 [INF] [Catalog] [Correlation:61d8752e-ee8c-4764-8f6b-24dfd5ddc6ff] Response: 200
+2026-04-01 13:45:12 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 13:45:12 [INF] [Catalog] [REQUEST] PUT /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a/status
+2026-04-01 13:45:12 [INF] [Catalog] [Correlation:5678a52a-a213-4911-999f-127a1825ef02] Request: PUT /api/products/4a50106d-341b-4f27-8402-48bc5786aa6a/status
+2026-04-01 13:45:12 [INF] [Catalog] [Correlation:5678a52a-a213-4911-999f-127a1825ef02] Response: 200
+2026-04-01 13:45:12 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:10:46 [INF] [Catalog] [REQUEST] GET /api/products
+2026-04-01 14:10:46 [INF] [Catalog] [Correlation:b245f4ea-a864-42aa-8bda-a3dc367fcd0a] Request: GET /api/products
+2026-04-01 14:10:46 [INF] [Catalog] [Correlation:{cid}] [PRODUCT][GET][START]
+2026-04-01 14:10:47 [INF] [Catalog] [Correlation:b245f4ea-a864-42aa-8bda-a3dc367fcd0a] Response: 200
+2026-04-01 14:10:47 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:11:43 [INF] [Catalog] [REQUEST] GET /api/products/ceda0f10-9869-4c4f-86d7-2c8d4d0725bc
+2026-04-01 14:11:43 [INF] [Catalog] [Correlation:214974c4-7ad5-44ce-9491-499dc047b0a1] Request: GET /api/products/ceda0f10-9869-4c4f-86d7-2c8d4d0725bc
+2026-04-01 14:11:43 [INF] [Catalog] [Correlation:214974c4-7ad5-44ce-9491-499dc047b0a1] Response: 200
+2026-04-01 14:11:43 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:11:44 [INF] [Catalog] [REQUEST] PUT /api/products/ceda0f10-9869-4c4f-86d7-2c8d4d0725bc/status
+2026-04-01 14:11:44 [INF] [Catalog] [Correlation:978ba7e6-1304-4fc0-8b0d-5cd6045d9db9] Request: PUT /api/products/ceda0f10-9869-4c4f-86d7-2c8d4d0725bc/status
+2026-04-01 14:11:44 [INF] [Catalog] [Correlation:978ba7e6-1304-4fc0-8b0d-5cd6045d9db9] Response: 200
+2026-04-01 14:11:44 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:26:08 [INF] [Catalog] [REQUEST] POST /api/products/
+2026-04-01 14:26:08 [INF] [Catalog] [Correlation:801df804-08ee-4298-915b-843f6c34b138] Request: POST /api/products/
+2026-04-01 14:26:09 [INF] [Catalog] [Correlation:801df804-08ee-4298-915b-843f6c34b138] Response: 200
+2026-04-01 14:26:09 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:26:17 [INF] [Catalog] [REQUEST] GET /api/products
+2026-04-01 14:26:17 [INF] [Catalog] [Correlation:fd8aeb19-d8d5-4472-98d7-628e34d1008f] Request: GET /api/products
+2026-04-01 14:26:17 [INF] [Catalog] [Correlation:{cid}] [PRODUCT][GET][START]
+2026-04-01 14:26:17 [INF] [Catalog] [Correlation:fd8aeb19-d8d5-4472-98d7-628e34d1008f] Response: 200
+2026-04-01 14:26:17 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:27:02 [INF] [Catalog] [REQUEST] GET /api/products/5ded3718-9dd8-4b22-b76b-306bfef073ae
+2026-04-01 14:27:02 [INF] [Catalog] [Correlation:cbc9221d-4963-42f5-9339-92fe0a251d06] Request: GET /api/products/5ded3718-9dd8-4b22-b76b-306bfef073ae
+2026-04-01 14:27:02 [INF] [Catalog] [Correlation:cbc9221d-4963-42f5-9339-92fe0a251d06] Response: 200
+2026-04-01 14:27:02 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 14:27:03 [INF] [Catalog] [REQUEST] PUT /api/products/5ded3718-9dd8-4b22-b76b-306bfef073ae/status
+2026-04-01 14:27:03 [INF] [Catalog] [Correlation:a56eaaf8-1168-4988-bf99-f784f4828c64] Request: PUT /api/products/5ded3718-9dd8-4b22-b76b-306bfef073ae/status
+2026-04-01 14:27:03 [INF] [Catalog] [Correlation:a56eaaf8-1168-4988-bf99-f784f4828c64] Response: 200
+2026-04-01 14:27:03 [INF] [Catalog] [RESPONSE] 200
+2026-04-01 21:24:39 [INF] [Catalog] [CID:13d4531b-7612-45dd-b434-866e068c8d32] [REQUEST] GET /api/products
+2026-04-01 21:24:39 [INF] [Catalog] [CID:13d4531b-7612-45dd-b434-866e068c8d32] [Correlation:13d4531b-7612-45dd-b434-866e068c8d32] Request: GET /api/products
+2026-04-01 21:24:39 [INF] [Catalog] [CID:13d4531b-7612-45dd-b434-866e068c8d32] [Correlation:{cid}] [PRODUCT][GET][START]
+2026-04-01 21:24:40 [INF] [Catalog] [CID:13d4531b-7612-45dd-b434-866e068c8d32] [Correlation:13d4531b-7612-45dd-b434-866e068c8d32] Response: 200
+2026-04-01 21:24:40 [INF] [Catalog] [CID:13d4531b-7612-45dd-b434-866e068c8d32] [RESPONSE] 200
+2026-04-01 21:27:34 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [REQUEST] GET /api/products/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:27:34 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Request: GET /api/products/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:27:34 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Response: 200
+2026-04-01 21:27:34 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [RESPONSE] 200
+2026-04-01 21:27:35 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [REQUEST] PUT /api/products/bc96f819-d821-4d0e-9249-50335c0057b1/status
+2026-04-01 21:27:35 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Request: PUT /api/products/bc96f819-d821-4d0e-9249-50335c0057b1/status
+2026-04-01 21:27:35 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [Correlation:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] Response: 200
+2026-04-01 21:27:35 [INF] [Catalog] [CID:0cd8036d-1d34-4c4f-a633-6927ee21a2b8] [RESPONSE] 200
+2026-04-01 21:45:13 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [REQUEST] GET /api/products
+2026-04-01 21:45:13 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [Correlation:35bc4144-8048-445a-bb2e-fceeb2262713] Request: GET /api/products
+2026-04-01 21:45:14 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [PRODUCT][GET][START]
+2026-04-01 21:45:14 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [PRODUCT][GET][SUCCESS] Count: 17
+2026-04-01 21:45:14 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [Correlation:35bc4144-8048-445a-bb2e-fceeb2262713] Response: 200
+2026-04-01 21:45:14 [INF] [Catalog] [CID:35bc4144-8048-445a-bb2e-fceeb2262713] [RESPONSE] 200
+2026-04-01 21:45:27 [INF] [Catalog] [CID:9e9506ba-6910-40b2-b918-198585983f3c] [REQUEST] GET /images/dc606d91-50a6-49d3-a424-fb620f8502fb.jpg
+2026-04-01 21:45:27 [INF] [Catalog] [CID:9e9506ba-6910-40b2-b918-198585983f3c] [Correlation:9e9506ba-6910-40b2-b918-198585983f3c] Request: GET /images/dc606d91-50a6-49d3-a424-fb620f8502fb.jpg
+2026-04-01 21:45:27 [INF] [Catalog] [CID:9e9506ba-6910-40b2-b918-198585983f3c] [Correlation:9e9506ba-6910-40b2-b918-198585983f3c] Response: 200
+2026-04-01 21:45:27 [INF] [Catalog] [CID:5e15ec2e-18af-4bef-921b-c42285797716] [REQUEST] GET /favicon.ico
+2026-04-01 21:45:27 [INF] [Catalog] [CID:9e9506ba-6910-40b2-b918-198585983f3c] [RESPONSE] 200
+2026-04-01 21:45:27 [INF] [Catalog] [CID:5e15ec2e-18af-4bef-921b-c42285797716] [Correlation:5e15ec2e-18af-4bef-921b-c42285797716] Request: GET /favicon.ico
+2026-04-01 21:45:27 [INF] [Catalog] [CID:5e15ec2e-18af-4bef-921b-c42285797716] [Correlation:5e15ec2e-18af-4bef-921b-c42285797716] Response: 404
+2026-04-01 21:45:27 [INF] [Catalog] [CID:5e15ec2e-18af-4bef-921b-c42285797716] [RESPONSE] 404
+2026-04-01 21:49:39 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [REQUEST] GET /api/products/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:49:39 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Request: GET /api/products/bc96f819-d821-4d0e-9249-50335c0057b1
+2026-04-01 21:49:39 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Response: 200
+2026-04-01 21:49:39 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [RESPONSE] 200
+2026-04-01 21:49:40 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [REQUEST] PUT /api/products/bc96f819-d821-4d0e-9249-50335c0057b1/status
+2026-04-01 21:49:40 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Request: PUT /api/products/bc96f819-d821-4d0e-9249-50335c0057b1/status
+2026-04-01 21:49:40 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [Correlation:6bec179b-cbab-4575-952f-1fa4165ed2ae] Response: 200
+2026-04-01 21:49:40 [INF] [Catalog] [CID:6bec179b-cbab-4575-952f-1fa4165ed2ae] [RESPONSE] 200
+2026-04-01 22:45:36 [INF] [Catalog] [CID:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-01 22:45:36 [INF] [Catalog] [CID:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] [Correlation:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] Request: GET /swagger/v1/swagger.json
+2026-04-01 22:45:36 [INF] [Catalog] [CID:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] [Correlation:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] Response: 200
+2026-04-01 22:45:36 [INF] [Catalog] [CID:6b4fe7c8-2a76-4489-a90a-8279e142e0fb] [RESPONSE] 200
+2026-04-01 22:55:51 [INF] [Catalog] [CID:1026c01f-cd67-4e12-a18e-976d3ef88428] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-01 22:55:51 [INF] [Catalog] [CID:1026c01f-cd67-4e12-a18e-976d3ef88428] [Correlation:1026c01f-cd67-4e12-a18e-976d3ef88428] Request: GET /swagger/v1/swagger.json
+2026-04-01 22:55:51 [INF] [Catalog] [CID:1026c01f-cd67-4e12-a18e-976d3ef88428] [Correlation:1026c01f-cd67-4e12-a18e-976d3ef88428] Response: 200
+2026-04-01 22:55:51 [INF] [Catalog] [CID:1026c01f-cd67-4e12-a18e-976d3ef88428] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:a503d938-8953-4d0e-9056-c03904b41b0e] [REQUEST] GET /swagger/index.html
+2026-04-01 22:56:11 [INF] [Catalog] [CID:a503d938-8953-4d0e-9056-c03904b41b0e] [Correlation:a503d938-8953-4d0e-9056-c03904b41b0e] Request: GET /swagger/index.html
+2026-04-01 22:56:11 [INF] [Catalog] [CID:a503d938-8953-4d0e-9056-c03904b41b0e] [Correlation:a503d938-8953-4d0e-9056-c03904b41b0e] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:564044a4-6ab8-4001-b7a1-559c5016756e] [REQUEST] GET /swagger/swagger-ui.css
+2026-04-01 22:56:11 [INF] [Catalog] [CID:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] [REQUEST] GET /swagger/index.css
+2026-04-01 22:56:11 [INF] [Catalog] [CID:8ab8fc71-258d-4792-a553-d47036961f7a] [REQUEST] GET /swagger/swagger-ui-bundle.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:a503d938-8953-4d0e-9056-c03904b41b0e] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:564044a4-6ab8-4001-b7a1-559c5016756e] [Correlation:564044a4-6ab8-4001-b7a1-559c5016756e] Request: GET /swagger/swagger-ui.css
+2026-04-01 22:56:11 [INF] [Catalog] [CID:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] [Correlation:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] Request: GET /swagger/index.css
+2026-04-01 22:56:11 [INF] [Catalog] [CID:8ab8fc71-258d-4792-a553-d47036961f7a] [Correlation:8ab8fc71-258d-4792-a553-d47036961f7a] Request: GET /swagger/swagger-ui-bundle.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:cd2d7579-90d7-49b6-92b7-93f86b2be76d] [REQUEST] GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:cd2d7579-90d7-49b6-92b7-93f86b2be76d] [Correlation:cd2d7579-90d7-49b6-92b7-93f86b2be76d] Request: GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] [Correlation:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:564044a4-6ab8-4001-b7a1-559c5016756e] [Correlation:564044a4-6ab8-4001-b7a1-559c5016756e] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:3cf9f13b-bd1c-4c3c-9177-b13ca4dffaa4] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:564044a4-6ab8-4001-b7a1-559c5016756e] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:49468a34-dacb-4344-a8c3-de9381f8e7d1] [REQUEST] GET /swagger/index.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:cd2d7579-90d7-49b6-92b7-93f86b2be76d] [Correlation:cd2d7579-90d7-49b6-92b7-93f86b2be76d] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:8ab8fc71-258d-4792-a553-d47036961f7a] [Correlation:8ab8fc71-258d-4792-a553-d47036961f7a] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:49468a34-dacb-4344-a8c3-de9381f8e7d1] [Correlation:49468a34-dacb-4344-a8c3-de9381f8e7d1] Request: GET /swagger/index.js
+2026-04-01 22:56:11 [INF] [Catalog] [CID:49468a34-dacb-4344-a8c3-de9381f8e7d1] [Correlation:49468a34-dacb-4344-a8c3-de9381f8e7d1] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:8ab8fc71-258d-4792-a553-d47036961f7a] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:cd2d7579-90d7-49b6-92b7-93f86b2be76d] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:49468a34-dacb-4344-a8c3-de9381f8e7d1] [RESPONSE] 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:6ba7a02c-d829-4d22-b78e-5e936f57d47b] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-01 22:56:11 [INF] [Catalog] [CID:6ba7a02c-d829-4d22-b78e-5e936f57d47b] [Correlation:6ba7a02c-d829-4d22-b78e-5e936f57d47b] Request: GET /swagger/v1/swagger.json
+2026-04-01 22:56:11 [INF] [Catalog] [CID:6ba7a02c-d829-4d22-b78e-5e936f57d47b] [Correlation:6ba7a02c-d829-4d22-b78e-5e936f57d47b] Response: 200
+2026-04-01 22:56:11 [INF] [Catalog] [CID:6ba7a02c-d829-4d22-b78e-5e936f57d47b] [RESPONSE] 200
+2026-04-01 23:05:31 [INF] [Catalog] [CID:c420ec08-4928-4840-951a-0c45e1bb18c7] [REQUEST] GET /swagger/index.html
+2026-04-01 23:05:31 [INF] [Catalog] [CID:c420ec08-4928-4840-951a-0c45e1bb18c7] [Correlation:c420ec08-4928-4840-951a-0c45e1bb18c7] Request: GET /swagger/index.html
+2026-04-01 23:05:31 [INF] [Catalog] [CID:c420ec08-4928-4840-951a-0c45e1bb18c7] [Correlation:c420ec08-4928-4840-951a-0c45e1bb18c7] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:c420ec08-4928-4840-951a-0c45e1bb18c7] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] [REQUEST] GET /swagger/swagger-ui.css
+2026-04-01 23:05:31 [INF] [Catalog] [CID:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] [REQUEST] GET /swagger/index.css
+2026-04-01 23:05:31 [INF] [Catalog] [CID:897dd408-9d02-448e-a88a-93b3c7f19ee2] [REQUEST] GET /swagger/swagger-ui-bundle.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] [Correlation:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] Request: GET /swagger/swagger-ui.css
+2026-04-01 23:05:31 [INF] [Catalog] [CID:5d545a05-425b-4e28-aef5-a00ce3373341] [REQUEST] GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] [Correlation:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] Request: GET /swagger/index.css
+2026-04-01 23:05:31 [INF] [Catalog] [CID:897dd408-9d02-448e-a88a-93b3c7f19ee2] [Correlation:897dd408-9d02-448e-a88a-93b3c7f19ee2] Request: GET /swagger/swagger-ui-bundle.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:5d545a05-425b-4e28-aef5-a00ce3373341] [Correlation:5d545a05-425b-4e28-aef5-a00ce3373341] Request: GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:5d545a05-425b-4e28-aef5-a00ce3373341] [Correlation:5d545a05-425b-4e28-aef5-a00ce3373341] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] [Correlation:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] [Correlation:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:5d545a05-425b-4e28-aef5-a00ce3373341] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:6bb1b5bb-4e6c-494b-b86f-978eee8fdb99] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:8496b11d-dc05-4d55-8582-d6f22b216985] [REQUEST] GET /swagger/index.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:897dd408-9d02-448e-a88a-93b3c7f19ee2] [Correlation:897dd408-9d02-448e-a88a-93b3c7f19ee2] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:4f7dd00b-b702-49bc-a07b-5d7a05a68d17] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:8496b11d-dc05-4d55-8582-d6f22b216985] [Correlation:8496b11d-dc05-4d55-8582-d6f22b216985] Request: GET /swagger/index.js
+2026-04-01 23:05:31 [INF] [Catalog] [CID:897dd408-9d02-448e-a88a-93b3c7f19ee2] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:8496b11d-dc05-4d55-8582-d6f22b216985] [Correlation:8496b11d-dc05-4d55-8582-d6f22b216985] Response: 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:8496b11d-dc05-4d55-8582-d6f22b216985] [RESPONSE] 304
+2026-04-01 23:05:31 [INF] [Catalog] [CID:7021e1fa-2e48-4d66-998f-162aeeb79427] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-01 23:05:31 [INF] [Catalog] [CID:7021e1fa-2e48-4d66-998f-162aeeb79427] [Correlation:7021e1fa-2e48-4d66-998f-162aeeb79427] Request: GET /swagger/v1/swagger.json
+2026-04-01 23:05:31 [INF] [Catalog] [CID:7021e1fa-2e48-4d66-998f-162aeeb79427] [Correlation:7021e1fa-2e48-4d66-998f-162aeeb79427] Response: 200
+2026-04-01 23:05:31 [INF] [Catalog] [CID:7021e1fa-2e48-4d66-998f-162aeeb79427] [RESPONSE] 200
+2026-04-01 23:44:10 [INF] [Catalog] [CID:a538a99a-5524-4587-b651-d3078ef6e2f9] [REQUEST] GET /swagger
+2026-04-01 23:44:10 [INF] [Catalog] [CID:a538a99a-5524-4587-b651-d3078ef6e2f9] [Correlation:a538a99a-5524-4587-b651-d3078ef6e2f9] Request: GET /swagger
+2026-04-01 23:44:10 [INF] [Catalog] [CID:a538a99a-5524-4587-b651-d3078ef6e2f9] [Correlation:a538a99a-5524-4587-b651-d3078ef6e2f9] Response: 301
+2026-04-01 23:44:10 [INF] [Catalog] [CID:a538a99a-5524-4587-b651-d3078ef6e2f9] [RESPONSE] 301
+2026-04-01 23:44:10 [INF] [Catalog] [CID:121bd33b-a7e0-40dd-82cb-ada359264d0c] [REQUEST] GET /swagger/index.html
+2026-04-01 23:44:10 [INF] [Catalog] [CID:121bd33b-a7e0-40dd-82cb-ada359264d0c] [Correlation:121bd33b-a7e0-40dd-82cb-ada359264d0c] Request: GET /swagger/index.html
+2026-04-01 23:44:10 [INF] [Catalog] [CID:121bd33b-a7e0-40dd-82cb-ada359264d0c] [Correlation:121bd33b-a7e0-40dd-82cb-ada359264d0c] Response: 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:121bd33b-a7e0-40dd-82cb-ada359264d0c] [RESPONSE] 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] [REQUEST] GET /swagger/swagger-ui-bundle.js
+2026-04-01 23:44:10 [INF] [Catalog] [CID:dd663277-f92c-40d3-bdae-c94371463e96] [REQUEST] GET /swagger/swagger-ui.css
+2026-04-01 23:44:10 [INF] [Catalog] [CID:7f091027-5cd6-4dde-b650-425e260f7713] [REQUEST] GET /swagger/index.css
+2026-04-01 23:44:10 [INF] [Catalog] [CID:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] [Correlation:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] Request: GET /swagger/swagger-ui-bundle.js
+2026-04-01 23:44:10 [INF] [Catalog] [CID:dd663277-f92c-40d3-bdae-c94371463e96] [Correlation:dd663277-f92c-40d3-bdae-c94371463e96] Request: GET /swagger/swagger-ui.css
+2026-04-01 23:44:10 [INF] [Catalog] [CID:7f091027-5cd6-4dde-b650-425e260f7713] [Correlation:7f091027-5cd6-4dde-b650-425e260f7713] Request: GET /swagger/index.css
+2026-04-01 23:44:10 [INF] [Catalog] [CID:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] [Correlation:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] Response: 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:dd663277-f92c-40d3-bdae-c94371463e96] [Correlation:dd663277-f92c-40d3-bdae-c94371463e96] Response: 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:7f091027-5cd6-4dde-b650-425e260f7713] [Correlation:7f091027-5cd6-4dde-b650-425e260f7713] Response: 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:3cdcfd29-d09a-49a5-9a1f-2d4255c02537] [RESPONSE] 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:dd663277-f92c-40d3-bdae-c94371463e96] [RESPONSE] 304
+2026-04-01 23:44:10 [INF] [Catalog] [CID:7f091027-5cd6-4dde-b650-425e260f7713] [RESPONSE] 304
+2026-04-01 23:44:11 [INF] [Catalog] [CID:99d8f952-da04-4a27-98bc-317b3d395846] [REQUEST] GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 23:44:11 [INF] [Catalog] [CID:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] [REQUEST] GET /swagger/index.js
+2026-04-01 23:44:11 [INF] [Catalog] [CID:99d8f952-da04-4a27-98bc-317b3d395846] [Correlation:99d8f952-da04-4a27-98bc-317b3d395846] Request: GET /swagger/swagger-ui-standalone-preset.js
+2026-04-01 23:44:11 [INF] [Catalog] [CID:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] [Correlation:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] Request: GET /swagger/index.js
+2026-04-01 23:44:11 [INF] [Catalog] [CID:99d8f952-da04-4a27-98bc-317b3d395846] [Correlation:99d8f952-da04-4a27-98bc-317b3d395846] Response: 304
+2026-04-01 23:44:11 [INF] [Catalog] [CID:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] [Correlation:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] Response: 304
+2026-04-01 23:44:11 [INF] [Catalog] [CID:99d8f952-da04-4a27-98bc-317b3d395846] [RESPONSE] 304
+2026-04-01 23:44:11 [INF] [Catalog] [CID:4fcfb0e3-e8c2-4589-884c-e29e4031b9e7] [RESPONSE] 304
+2026-04-01 23:44:11 [INF] [Catalog] [CID:6fae6654-3bba-4f42-808d-76a0478270c1] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-01 23:44:11 [INF] [Catalog] [CID:6fae6654-3bba-4f42-808d-76a0478270c1] [Correlation:6fae6654-3bba-4f42-808d-76a0478270c1] Request: GET /swagger/v1/swagger.json
+2026-04-01 23:44:11 [INF] [Catalog] [CID:6fae6654-3bba-4f42-808d-76a0478270c1] [Correlation:6fae6654-3bba-4f42-808d-76a0478270c1] Response: 200
+2026-04-01 23:44:11 [INF] [Catalog] [CID:6fae6654-3bba-4f42-808d-76a0478270c1] [RESPONSE] 200

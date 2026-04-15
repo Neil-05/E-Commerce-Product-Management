@@ -1,0 +1,8 @@
+2026-04-08 21:49:52 [INF] [Catalog] [CID:a53eebe2-4222-4137-820e-f3603c87ca50] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-08 21:49:52 [INF] [Catalog] [CID:a53eebe2-4222-4137-820e-f3603c87ca50] [Correlation:a53eebe2-4222-4137-820e-f3603c87ca50] Request: GET /swagger/v1/swagger.json
+2026-04-08 21:49:52 [INF] [Catalog] [CID:a53eebe2-4222-4137-820e-f3603c87ca50] [Correlation:a53eebe2-4222-4137-820e-f3603c87ca50] Response: 200
+2026-04-08 21:49:52 [INF] [Catalog] [CID:a53eebe2-4222-4137-820e-f3603c87ca50] [RESPONSE] 200
+2026-04-08 23:33:35 [INF] [Catalog] [CID:ce14461e-6bc5-4a56-816a-1d427769aed3] [REQUEST] GET /swagger/v1/swagger.json
+2026-04-08 23:33:35 [INF] [Catalog] [CID:ce14461e-6bc5-4a56-816a-1d427769aed3] [Correlation:ce14461e-6bc5-4a56-816a-1d427769aed3] Request: GET /swagger/v1/swagger.json
+2026-04-08 23:33:35 [INF] [Catalog] [CID:ce14461e-6bc5-4a56-816a-1d427769aed3] [Correlation:ce14461e-6bc5-4a56-816a-1d427769aed3] Response: 200
+2026-04-08 23:33:35 [INF] [Catalog] [CID:ce14461e-6bc5-4a56-816a-1d427769aed3] [RESPONSE] 200
