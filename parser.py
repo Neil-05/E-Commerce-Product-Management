@@ -150,10 +150,20 @@ def parse_product_from_text(message: str):
     message = message.lower()
 
     # 🔢 Extract price
-    price_match = re.search(r"\d+", message)
-    price = int(price_match.group()) if price_match else 0
+    # 1️⃣ Try keyword-based extraction
+    price_match = re.search(r'(price|rupees|rs|₹)\s*[:\-]?\s*(\d+)', message)
 
-    # 🖼️ Extract images
+    if price_match:
+        price = int(price_match.group(2))
+
+    else:
+    # 2️⃣ Fallback → take largest number (SMART)
+        numbers = [int(n) for n in re.findall(r'\d+', message)]
+    
+        price = max(numbers) if numbers else None
+
+
+        # 🖼️ Extract images
     image_match = re.search(r"(\d+)\s*image", message)
     image_count = int(image_match.group(1)) if image_match else 1
 

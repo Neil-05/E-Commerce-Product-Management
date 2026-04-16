@@ -3,6 +3,7 @@ PRICE_RULES = {
         "phone": (3000, 160000),
         "tv": (20000, 500000),
         "laptop": (20000, 200000),
+        "console":(30000, 90000),
         "general": (1000, 300000)
     },
     "Books": {
@@ -35,6 +36,9 @@ KEYWORD_MAP = {
     "phone": ["phone", "mobile", "smartphone", "iphone", "android"],
     "tv": ["tv", "television", "smart tv"],
     "laptop": ["laptop", "notebook", "computer"],
+  
+    "console": ["ps", "ps4", "ps5", "xbox", "playstation","nintendo"],
+
 
     "novel": ["novel", "story", "fiction"],
     "textbook": ["textbook", "study material"],
@@ -88,6 +92,9 @@ def check_price_validity(description, category, price):
     # =========================
     # 🎯 IF SPECIFIC MATCH FOUND
     # =========================
+    print("Matched product:", matched_product)
+    print("Price:", price)
+    print("Rule:", rules.get(matched_product))
     if matched_product:
         min_p, max_p = rules[matched_product]
 
