@@ -20,4 +20,43 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MLService\.git\objects\info\" />
+    <Folder Include="MLService\.git\refs\tags\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="MLService\.git\config" />
+    <None Include="MLService\.git\description" />
+    <None Include="MLService\.git\HEAD" />
+    <None Include="MLService\.git\hooks\applypatch-msg.sample" />
+    <None Include="MLService\.git\hooks\commit-msg.sample" />
+    <None Include="MLService\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="MLService\.git\hooks\post-update.sample" />
+    <None Include="MLService\.git\hooks\pre-applypatch.sample" />
+    <None Include="MLService\.git\hooks\pre-commit.sample" />
+    <None Include="MLService\.git\hooks\pre-merge-commit.sample" />
+    <None Include="MLService\.git\hooks\pre-push.sample" />
+    <None Include="MLService\.git\hooks\pre-rebase.sample" />
+    <None Include="MLService\.git\hooks\pre-receive.sample" />
+    <None Include="MLService\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="MLService\.git\hooks\push-to-checkout.sample" />
+    <None Include="MLService\.git\hooks\sendemail-validate.sample" />
+    <None Include="MLService\.git\hooks\update.sample" />
+    <None Include="MLService\.git\index" />
+    <None Include="MLService\.git\info\exclude" />
+    <None Include="MLService\.git\logs\HEAD" />
+    <None Include="MLService\.git\logs\refs\heads\ml" />
+    <None Include="MLService\.git\objects\pack\pack-c1e32defef14b763641cbb8f0d0128f83c85eb43.idx" />
+    <None Include="MLService\.git\objects\pack\pack-c1e32defef14b763641cbb8f0d0128f83c85eb43.pack" />
+    <None Include="MLService\.git\objects\pack\pack-c1e32defef14b763641cbb8f0d0128f83c85eb43.rev" />
+    <None Include="MLService\.git\packed-refs" />
+    <None Include="MLService\.git\refs\heads\ml" />
+    <None Include="MLService\Solution1\CatalogService\CatalogService.csproj" />
+    <None Include="MLService\Solution1\IdentityService\IdentityService.csproj" />
+    <None Include="MLService\Solution1\Solution1.slnx" />
+    <None Include="MLService\Solution1\WorkflowService\WorkflowService.csproj" />
+    <None Include="MLService\Solution1\WorkflowServie\WorkflowServie.csproj" />
+  </ItemGroup>
+
 </Project>

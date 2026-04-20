@@ -3,7 +3,6 @@
   <Project Path="ApiGateway/ApiGateway.csproj" />
   <Project Path="CatalogService/CatalogService.csproj" />
   <Project Path="IdentityService/IdentityService.csproj" />
-  <Project Path="MLService/MLService.csproj" />
   <Project Path="NotificationService/NotificationService.csproj" />
   <Project Path="WorkflowService/WorkflowService.csproj" />
 </Solution>
